@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+@import "tailwindcss";
+
+@theme {
+    --font-body:  "Roboto", sans-serif;
+    --font-heading:"Manrope", sans-serif;;
+    --color-primary:#027EF5;
+    --color-secondary:#00123D;
+    }
+@layer utilities {
+}
+html{
+    @apply scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100;
+}
+body {
+    font-family: var(--font-body);
+    @apply scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100;
+}
+h1,h2,h3,h4,h5,h6{font-family: var(--font-heading);}

@@ -1,0 +1,8 @@
+RewriteEngine On
+
+# Hide index.html from URL
+RewriteCond %{THE_REQUEST} \s/+(.*/)?index\.html[\s?] [NC]
+RewriteRule ^(.*/)?index\.html$ /$1 [R=301,L]
+
+# Serve index.html automatically
+DirectoryIndex index.html
