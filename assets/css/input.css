@@ -12,7 +12,8 @@
     --color-darkBlue:#00123D;
     --color-whitelight:rgba(255, 255, 255, 0.5);
     --color-blacklight:rgba(0, 0, 0, 0.5);
-    --color-:#323232;
+    --color-darkColor:#323232;
+    --shadow-primary{ box-shadow: rgba(2, 126, 245, .01) 0px 7px 29px 0px; }
     }
 @layer components {
     .primary-btn{
@@ -22,6 +23,9 @@
         @apply transition inline-flex items-center justify-center w-auto min-w-25 h-10 xl:h-11.25 bg-white text-primary text-sm xl:text-base font-medium rounded-lg py-2 px-7 capitalize relative hover:bg-darkBlue hover:text-white focus:bg-darkBlue focus:text-white active:bg-darkBlue active:text-white;
     }
 }
+@layer utilities{
+    
+}
 html{
     @apply scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100;
 }
@@ -30,3 +34,21 @@ body {
     @apply scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100;
 }
 h1,h2,h3,h4,h5,h6{font-family: var(--font-heading);}
+.pricing-list li:before{
+          content: '\f00c';
+          position: absolute;
+          width: 16px;
+          height: 16px;
+          background-color: var(--color-primary);
+          color: #ffffff !important;
+          border-radius: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 9px;
+          left: 0;
+          top: 2px;
+          font-family: Fontawesome;
+          color: var(--color-primary);
+          line-height: 1;
+} 
