@@ -2,6 +2,11 @@
 $(".hamburgerMenu").click(function(){
   $(this).toggleClass('active');
   $(".headerNav").toggleClass('show');
+  $(".body-overlay").toggleClass('active');
+  $("html").toggleClass('freeze');
+});
+$(".body-overlay").click(function(){
+  $(".hamburgerMenu").trigger("click");
 });
 // ----------header-Toggle-Menu----------
 

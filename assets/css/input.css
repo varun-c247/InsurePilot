@@ -17,10 +17,10 @@
     }
 @layer components {
     .primary-btn{
-        @apply transition inline-flex items-center justify-center w-auto min-w-25 h-10 xl:h-11.25 bg-primary text-white text-sm xl:text-base font-medium rounded-lg py-2 px-7 capitalize relative hover:bg-darkBlue focus:bg-darkBlue active:bg-darkBlue;
+        @apply transition inline-flex items-center justify-center w-auto min-w-25 h-10 xl:h-11.25 bg-primary text-white text-sm xl:text-base font-medium rounded-lg py-2 px-7 capitalize relative hover:bg-darkBlue focus:bg-darkBlue active:bg-darkBlue hover:dark:bg-white hover:dark:text-primary focus:dark:bg-white focus:dark:text-primary active:dark:bg-white active:dark:text-primary; 
     }
     .secondary-btn{
-        @apply transition inline-flex items-center justify-center w-auto min-w-25 h-10 xl:h-11.25 bg-white text-primary text-sm xl:text-base font-medium rounded-lg py-2 px-7 capitalize relative hover:bg-darkBlue hover:text-white focus:bg-darkBlue focus:text-white active:bg-darkBlue active:text-white;
+        @apply transition inline-flex items-center justify-center w-auto min-w-25 h-10 xl:h-11.25 bg-white text-primary text-sm xl:text-base font-medium rounded-lg py-2 px-7 capitalize relative hover:bg-darkBlue hover:text-white focus:bg-darkBlue focus:text-white active:bg-darkBlue active:text-white     hover:dark:bg-primary  focus:dark:bg-darkBlue  active:dark:bg-darkBlue ;
     }
 }
 @layer utilities{

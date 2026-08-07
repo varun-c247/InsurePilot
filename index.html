@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="overflow-x-hidden">
+<html lang="en" class="overflow-x-hidden [&.freeze]:overflow-hidden">
 
 <head>
   <!-- meta-tags-start -->
@@ -25,26 +25,33 @@
 </head>
 
 <body class="antialiased overflow-x-hidden bg-white dark:bg-black">
+  <!-- body-overlay -->
+   <div class="body-overlay fixed inset-0 z-8 w-full h-dvh bg-blacklight hidden [&.active]:block"></div>
+  
   <!-- header-section-start -->
   <header
-    class="w-full bg-whitelight dark:bg-blacklight backdrop-blur-sm h-16 lg:h-19 2xl:h-23 fixed left-0 top-0 border-b border-gray-200 dark:border-gray-500 flex items-center z-9">
+    class="w-full bg-whitelight dark:bg-blacklight backdrop-blur-sm h-16 lg:h-19 2xl:h-23 fixed left-0 top-0 border-b border-gray-200 dark:border-gray-500 flex items-center z-9 [.freeze_&]:bg-white [.freeze_&]:dark:bg-black ">
     <div
-      class="container max-w-420 px-5 sm:px-6 lg:px-8 xl:px-10 mx-auto flex items-center justify-between gap-3 relative">
+      class="container max-w-420 px-5 sm:px-6 lg:px-8 xl:px-10 mx-auto flex items-center justify-between gap-4 relative">
       <a href="#" class="block w-auto max-w-35 lg:max-w-42 2xl:max-w-50">
-        <img src="assets/images/site-logo.svg" alt="Logo" class="w-full h-auto  object-cover">
+        <img src="assets/images/site-logo.svg" alt="Logo" class="w-full h-auto  object-cover dark:hidden">
+        <img src="assets/images/site-whitelogo.svg" alt="Logo" class="w-full h-auto  object-cover hidden dark:block">
       </a>
       <nav
-        class="flex flex-col lg:flex-row lg:items-center gap-5 lg:gap-10 xl;gap-13 2xl:gap-15 text-lg lg:text-sm 2xl:text-base text-gray-500 font-medium capitalize dark:text-gray-300 fixed left-0 top-16.25 lg:relative lg:top-0  h-[calc(100dvh-65px)] lg:h-auto bg-white lg:bg-transparent border-r border-gray-200 lg:border-r-0 w-full max-w-3xs lg:w-auto lg:max-w-none py-5 px-8 lg:px-0 lg:py-0 -translate-x-full lg:translate-x-0 headerNav [&.show]:translate-x-0 transition-3">
+        class="flex flex-col lg:flex-row lg:items-center gap-5 lg:gap-10 xl;gap-13 2xl:gap-15 text-lg lg:text-sm 2xl:text-base text-gray-500 font-medium capitalize dark:text-gray-300 fixed left-0 top-16 lg:relative lg:top-0  h-[calc(100dvh-65px)] lg:h-auto bg-white lg:bg-transparent border-r border-gray-200 lg:border-r-0 w-full max-w-3xs lg:w-auto lg:max-w-none py-5 px-8 lg:px-0 lg:py-0 -translate-x-full lg:translate-x-0 headerNav [&.show]:translate-x-0 transition-3 dark:bg-black">
         <a href="#"
-          class="nav-link active hover:text-gray-700 hover:dark:text-white transition-colors duration-300 [&.active]:text-primary  focus:text-gray-700 focus:dark:text-white transition">Home</a>
+          class="nav-link active hover:text-gray-700 hover:dark:text-white transition-colors duration-300 [&.active]:text-primary  focus:text-gray-700 focus:dark:text-white">Home</a>
         <a href="#"
-          class="nav-link hover:text-gray-700 hover:dark:text-white transition-colors duration-300 [&.active]:text-primary  focus:text-gray-700 focus:dark:text-white transition">about</a>
+          class="nav-link hover:text-gray-700 hover:dark:text-white transition-colors duration-300 [&.active]:text-primary  focus:text-gray-700 focus:dark:text-white">about</a>
         <a href="#"
-          class="nav-link hover:text-gray-700 hover:dark:text-white transition-colors duration-300 [&.active]:text-primary  focus:text-gray-700 focus:dark:text-white transition">featured</a>
+          class="nav-link hover:text-gray-700 hover:dark:text-white transition-colors duration-300 [&.active]:text-primary  focus:text-gray-700 focus:dark:text-white">featured</a>
         <a href="#"
-          class="nav-link hover:text-gray-700 hover:dark:text-white transition-colors duration-300 [&.active]:text-primary  focus:text-gray-700 focus:dark:text-white transition">prcing</a>
+          class="nav-link hover:text-gray-700 hover:dark:text-white transition-colors duration-300 [&.active]:text-primary  focus:text-gray-700 focus:dark:text-white">prcing</a>
         <a href="#"
-          class="nav-link hover:text-gray-700 hover:dark:text-white transition-colors duration-300 [&.active]:text-primary  focus:text-gray-700 focus:dark:text-white transition">contact</a>
+          class="nav-link hover:text-gray-700 hover:dark:text-white transition-colors duration-300 [&.active]:text-primary  focus:text-gray-700 focus:dark:text-white">contact</a>
+          <a href="#"
+          class="nav-link hover:text-gray-700 hover:dark:text-white transition-colors duration-300 [&.active]:text-primary  focus:text-gray-700 focus:dark:text-white lg:hidden">sign up</a>
+          <a href="" class="primary-btn lg:hidden">log in</a>
       </nav>
       <div class="hidden lg:flex items-center gap-5">
         <a href=""
@@ -52,7 +59,7 @@
           up</a>
         <a href="" class="primary-btn">log in</a>
         <button
-          class="themeToggle w-10 xl:w-11.25 h-10 xl:h-11.25 flex items-center justify-center p-1 transition-colors duration-300 rounded-full bg-gray-2 text-gray-500 cursor-pointer hover:bg-gray-300 hover:text-gray-600 dark:text-black dark:bg-white hover:dark:text-black hover:dark:bg-white">
+          class="themeToggle shadow-md w-10 xl:w-11.25 h-10 xl:h-11.25 flex items-center justify-center p-1 transition-colors duration-300 rounded-full bg-gray-2 text-gray-500 cursor-pointer hover:bg-gray-300 hover:text-gray-600 dark:text-black dark:bg-white hover:dark:text-black hover:dark:bg-white">
           <span class="text-xl [.dark_&]:hidden">
             <img src="assets/icons/sun-icon.png" class="w-auto h-auto max-w-7 max-h-7 object-contain object-center"
               alt="Sun-icon" />
@@ -63,6 +70,17 @@
           </span>
         </button>
       </div>
+      <button
+          class="themeToggle shadow-md  w-10 xl:w-11.25 h-10 xl:h-11.25 flex items-center justify-center p-1 transition-colors duration-300 rounded-full bg-gray-2 text-gray-500 cursor-pointer hover:bg-gray-300 hover:text-gray-600 dark:text-black dark:bg-white hover:dark:text-black hover:dark:bg-white lg:hidden ms-auto">
+          <span class="text-xl [.dark_&]:hidden">
+            <img src="assets/icons/sun-icon.png" class="w-auto h-auto max-w-7 max-h-7 object-contain object-center"
+              alt="Sun-icon" />
+          </span>
+          <span class="hidden text-xl [.dark_&]:block">
+            <img src="assets/icons/moon-icon.png" class="w-auto h-auto max-w-7 max-h-7 object-contain object-center"
+              alt="Moon-icon" />
+          </span>
+        </button>
       <!-- Mobile menu button -->
       <button class="lg:hidden hamburgerMenu transition-transform duration-300 ease-in-out " aria-label="Open menu">
         <span
@@ -78,39 +96,43 @@
   <!-- header-section-end -->
 
   <!-- hero-section-start -->
-  <section class="hero pt-23 px-0 relative border-b border-gray-50 dark:border-gray-800">
+  <section class="hero pt-16 lg:pt-19 2xl:pt-23 px-0 relative border-b border-gray-50 dark:border-gray-800">
     <div class="hero-slider w-full h-auto ">
-      <div class="slider_item w-full h-[75dvh] relative flex items-center ">
-        <figure class="hero-img absolute w-full h-full max-w-[78dvw] left-0 top-0 mb-0">
+      <div class="slider_item py-10 sm:py-15 w-full h-auto md:h-[56dvh] xl:h-[68dvh] 2xl:h-[75dvh] relative flex items-center ">
+        <figure class="hero-img absolute w-full h-full md:max-w-[78dvw] left-0 top-0 mb-0">
           <img src="assets/images/hero-1.jpg" class="w-full h-full object-cover object-center" alt="hero-image" />
         </figure>
         <div class="container max-w-420 px-5 sm:px-6 lg:px-8 xl:px-10 mx-auto">
-          <div class="w-full max-w-3xl ms-auto p-15 bg-primary relative z-1" data-aos="flip-right"
+          <div class="w-full max-w-2xl xl:max-w-3xl md:ms-auto p-6 sm:p-10 xl:12 2xl:p-15 bg-primary relative z-1" data-aos="flip-right"
             data-aos-duration="2000">
-            <span class="absolute left-0 top-0 w-40 h-40 z-0 
+            <span class="hidden sm:block absolute left-0 top-0 w-40 h-40 z-0 
                           before:content-['']
                           before:absolute
                           before:w-full 
                           before:h-px 
                           before:bg-white 
-                          before:top-9 
-                          before:left-4
+                          before:top-5
+                          before:left-2
+                          2xl:before:top-9 
+                          2xl:before:left-4
 
                           after:content-['']
                           after:absolute
                           after:w-px 
                           after:h-full 
                           after:bg-white 
-                          after:top-4 
-                          after:left-9
+                          after:top-2 
+                          after:left-5
+                          2xl:after:top-4 
+                          2xl:after:left-9
                           "></span>
             <div
-              class="w-auto inline-flex items-center gap-2 py-1.5 px-4 bg-white border border-white text-darkBlue text-sm font-medium rounded-4xl backdrop-blur-md mb-5">
+              class="w-auto inline-flex items-center gap-2 py-1.5 px-4 bg-white border border-white text-darkBlue text-sm font-medium rounded-4xl backdrop-blur-md mb-3 2xl:mb-5">
               <span class="text-yellow-500 grow-0 shrink-0 basis-auto"><i class="fa-solid fa-star"></i></span>
               <span class="">Trusted by 50,000+ Customers</span>
             </div>
             <div class="relative z-1">
-              <h1 class="text-5xl font-heading font-extrabold text-white mb-5 leading-14">Insurance Made Simple, Fast,
+              <h1 class="text-3xl leading-9 xl:text-4xl xl:leading-10 2xl:text-5xl 2xl:leading-14 font-heading font-extrabold text-white mb-2 xl:mb-3 2xl:mb-5">Insurance Made Simple, Fast,
                 and Built
                 <span class="text-yellow-400">Around You</span>
               </h1>
@@ -118,25 +140,29 @@
                 smarter digital
                 insurance platform. Compare plans, receive personalized coverage recommendations, purchase policies
                 online, and manage claims effortlessly—all from one securedashboard.</p>
-              <a href="" class="secondary-btn min-w-45 h-12">get started</a>
+              <a href="" class="secondary-btn xl:min-w-40 2xl:min-w-45 2xl:h-12">get started</a>
             </div>
 
-            <span class="absolute right-0 bottom-0 w-40 h-40 z-0 
+            <span class="hidden sm:block absolute right-0 bottom-0 w-40 h-40 z-0 
                           before:content-['']
                           before:absolute
                           before:w-full 
                           before:h-px 
                           before:bg-white 
-                          before:bottom-9 
-                          before:right-4
+                          before:bottom-5
+                          before:right-2
+                          2xl:before:bottom-9 
+                          2xl:before:right-4
 
                           after:content-['']
                           after:absolute
                           after:w-px 
                           after:h-full 
                           after:bg-white 
-                          after:bottom-4 
-                          after:right-9
+                          after:bottom-2 
+                          after:right-5
+                          2xl:after:bottom-4 
+                          2xl:after:right-9
                           "></span>
           </div>
         </div>
@@ -146,10 +172,10 @@
   <!-- hero-section-end -->
 
   <!-- featured-section-start -->
-  <section class="py-20 relative bg-blue-50 dark:bg-darkColor">
+  <section class="py-10 md:py-13 lg:py-16 xl:py-20 relative bg-blue-50 dark:bg-darkColor">
     <div class="container max-w-420 px-5 sm:px-6 lg:px-8 xl:px-10 mx-auto">
       <div class="w-full mx-auto max-w-4xl text-center mb-5 lg:mb-7 2xl:mb-10">
-        <h2 class="text-4xl font-heading font-extrabold text-black dark:text-white mb-3 capitalize">
+        <h2 class="text-xl md:text-2xl xl:text-3xl 2xl:text-4xl font-heading font-extrabold text-black dark:text-white mb-3 capitalize">
           Everything You Need to Protect <span class="text-yellow-400">What Matters</span>
         </h2>
         <p class="text-sm 2xl:text-base font-normal text-zinc-500 dark:text-white line-clamp-3  max-w-3xl mx-auto">
@@ -159,10 +185,9 @@
           over your coverage through one easy-to-use platform.
         </p>
       </div>
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 2xl:gap-7.5">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 2xl:gap-7.5">
         <div
-          class="bg-white relative px-8 py-12 w-full rounded-2xl shadow-sm transition-all duration-300 ease-in-out hover:-translate-y-5 hover:shadow-primary border-transparent dark:bg-black "
-          data-aos="fade-up" data-aos-duration="2000">
+          class="bg-white relative px-6 py-6 md:px-8 md:py-8 2xl:py-12 w-full rounded-xl md:rounded-2xl shadow-sm transition-all duration-300 ease-in-out hover:-translate-y-5 hover:shadow-primary border-transparent dark:bg-black ">
           <span class="w-15 h-15 p-2 bg-yellow-100 flex items-center justify-center mb-5 rounded-lg">
             <img src="assets/icons/Instant-Approval.png" class="w-11 h-11 object-contain object-center"
               alt="Instant Policy Approval">
@@ -176,8 +201,7 @@
           </p>
         </div>
         <div
-          class="bg-white relative px-8 py-12 w-full rounded-2xl shadow-sm transition-all duration-300 ease-in-out hover:-translate-y-5 hover:shadow-primary border-transparent dark:bg-black "
-          data-aos="fade-up" data-aos-duration="2000">
+          class="bg-white relative px-8 py-8 2xl:py-12 w-full rounded-xl md:rounded-2xl shadow-sm transition-all duration-300 ease-in-out hover:-translate-y-5 hover:shadow-primary border-transparent dark:bg-black ">
           <span class="w-15 h-15 p-2 bg-yellow-100 flex items-center justify-center mb-5 rounded-lg">
             <img src="assets/icons/Personalized-Coverage.png" class="w-11 h-11 object-contain object-center"
               alt="Personalized Coverage">
@@ -192,8 +216,7 @@
           </p>
         </div>
         <div
-          class="bg-white relative px-8 py-12 w-full rounded-2xl shadow-sm transition-all duration-300 ease-in-out hover:-translate-y-5 hover:shadow-primary border-transparent dark:bg-black "
-          data-aos="fade-up" data-aos-duration="2000">
+          class="bg-white relative px-8 py-8 2xl:py-12 w-full rounded-xl md:rounded-2xl shadow-sm transition-all duration-300 ease-in-out hover:-translate-y-5 hover:shadow-primary border-transparent dark:bg-black ">
           <span class="w-15 h-15 p-2 bg-yellow-100 flex items-center justify-center mb-5 rounded-lg">
             <img src="assets/icons/Digital-Claims.png" class="w-11 h-11 object-contain object-center"
               alt="Fast Digital Claims">
@@ -207,8 +230,7 @@
           </p>
         </div>
         <div
-          class="bg-white relative px-8 py-12 w-full rounded-2xl shadow-sm transition-all duration-300 ease-in-out hover:-translate-y-5 hover:shadow-primary border-transparent dark:bg-black "
-          data-aos="fade-up" data-aos-duration="2000">
+          class="bg-white relative px-8 py-8 2xl:py-12 w-full rounded-xl md:rounded-2xl shadow-sm transition-all duration-300 ease-in-out hover:-translate-y-5 hover:shadow-primary border-transparent dark:bg-black ">
           <span class="w-15 h-15 p-2 bg-yellow-100 flex items-center justify-center mb-5 rounded-lg">
             <img src="assets/icons/Policie-OnePlace.png" class="w-11 h-11 object-contain object-center"
               alt="All Your Policies in One Place">
@@ -222,8 +244,7 @@
           </p>
         </div>
         <div
-          class="bg-white relative px-8 py-12 w-full rounded-2xl shadow-sm transition-all duration-300 ease-in-out hover:-translate-y-5 hover:shadow-primary border-transparent dark:bg-black "
-          data-aos="fade-up" data-aos-duration="2000">
+          class="bg-white relative px-8 py-8 2xl:py-12 w-full rounded-xl md:rounded-2xl shadow-sm transition-all duration-300 ease-in-out hover:-translate-y-5 hover:shadow-primary border-transparent dark:bg-black ">
           <span class="w-15 h-15 p-2 bg-yellow-100 flex items-center justify-center mb-5 rounded-lg">
             <img src="assets/icons/Expert-Guidance.png" class="w-11 h-11 object-contain object-center"
               alt="Expert Guidance">
@@ -237,8 +258,7 @@
           </p>
         </div>
         <div
-          class="bg-white relative px-8 py-12 w-full rounded-2xl shadow-sm transition-all duration-300 ease-in-out hover:-translate-y-5 hover:shadow-primary border-transparent dark:bg-black "
-          data-aos="fade-up" data-aos-duration="2000">
+          class="bg-white relative px-8 py-8 2xl:py-12 w-full rounded-xl md:rounded-2xl shadow-sm transition-all duration-300 ease-in-out hover:-translate-y-5 hover:shadow-primary border-transparent dark:bg-black ">
           <span class="w-15 h-15 p-2 bg-yellow-100 flex items-center justify-center mb-5 rounded-lg">
             <img src="assets/icons/Grade-Security.png" class="w-11 h-11 object-contain object-center"
               alt="Enterprise-Grade Security">
@@ -258,33 +278,32 @@
   <!-- featured-section-end -->
 
   <!-- pricing-section-start  -->
-  <section class="py-20 relative">
+  <section class="py-10 md:py-13 lg:py-16 xl:py-20 relative">
     <div class="container max-w-420 px-5 sm:px-6 lg:px-8 xl:px-10 mx-auto">
       <div class="w-full mx-auto max-w-3xl text-center mb-5 lg:mb-7 2xl:mb-10">
-        <h4 class="text-4xl font-heading font-extrabold text-black dark:text-white mb-3 capitalize">Flexible
+        <h4 class="text-xl md:text-2xl xl:text-3xl 2xl:text-4xl font-heading font-extrabold text-black dark:text-white mb-3 capitalize">Flexible
           Plans for Individuals, Families, and Businesses </h4>
         <p class="text-sm 2xl:text-base font-normal text-zinc-500 dark:text-white line-clamp-3  max-w-3xl mx-auto">
           Choose a plan that fits your needs today and upgrade anytime as your life or business grows
         </p>
       </div>
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 2xl:gap-7.5 w-full 2xl:max-w-6xl mx-auto">
-        <div
-          class="relative w-full border border-gray-200 bg-white dark:bg-darkcolor rounded-3xl flex flex-col shadow-sm" data-aos="fade-up" data-aos-duration="2500">
-          <div class="py-5 px-8 bg-gray-2 w-full grow-0 shrink-0 basis-auto bg-gray-100 relative rounded-t-3xl">
+      <div class="grid md:grid-cols-3 lg:grid-cols-3 gap-5 md:gap-2 lg:gap-6 2xl:gap-7.5 w-full 2xl:max-w-6xl mx-auto">
+        <div class="relative w-full border border-gray-200 dark:border-gray-500 bg-white dark:bg-black rounded-2xl lg:rounded-3xl flex flex-col shadow-sm " data-aos="fade-up" data-aos-duration="2500">
+          <div class="py-5 px-6 md:py-3 md:px-4 lg:py-5 lg:px-6 xl:py-5 xl:px-8 bg-gray-2 w-full grow-0 shrink-0 basis-auto bg-gray-100 dark:bg-darkColor relative   rounded-t-2xl lg:rounded-t-3xl">
             <h5
               class="text-lg lg:text-xl font-extrabold font-heading capitalize text-black dark:text-white mb-1 line-clamp-1">
               Essential
             </h5>
-            <span class="text-2xl text-black font-extrabold font-heading inline-block mt-1 capitalize">$19<sub
-                class="ms-1 leading-1 text-sm lg:text-base text-zinc-500 font-medium bottom-0">/month</sub></span>
+            <span class=" text-xl lg:text-2xl text-black font-extrabold font-heading inline-block mt-1 capitalize dark:text-white">$19<sub
+                class="ms-1 leading-1 text-sm lg:text-base text-zinc-500 font-medium bottom-0 dark:text-white">/month</sub></span>
 
           </div>
-          <div class="p-8 flex flex-col gap-5 basis-auto w-full h-full">
+          <div class="p-6 xl:p-8 flex flex-col gap-4 xl:gap-5 basis-auto w-full h-full">
             <p class="text-sm 2xl:text-base font-normal text-zinc-500 dark:text-white line-clamp-2">Perfect for
               individuals
               looking for affordable everyday protection.
             </p>
-            <ul class="pricing-list mb-5">
+            <ul class="pricing-list mb-3 lg:mb-4 xl:mb-5">
               <li class="text-sm font-normal text-zinc-500 dark:text-white line-clamp-1 mt-2.5 relative pl-6">Health
                 Insurance Coverage</li>
               <li class="text-sm font-normal text-zinc-500 dark:text-white line-clamp-1 mt-2.5 relative pl-6">Instant
@@ -296,29 +315,28 @@
               <li class="text-sm font-normal text-zinc-500 dark:text-white line-clamp-1 mt-2.5 relative pl-6">Email
                 Support</li>
             </ul>
-            <a href="" class="secondary-btn border border-primary flex mt-auto">Choose Essential</a>
+            <a href="" class="secondary-btn border border-primary flex mt-auto hover:border-darkBlue">Choose Essential</a>
           </div>
         </div>
-        <div
-          class="popular relative w-full border border-gray-200 bg-white dark:bg-darkcolor rounded-3xl flex flex-col shadow-sm [&.popular]:border-primary" data-aos="fade-up" data-aos-duration="1200"> 
+        <div class="popular relative w-full border border-gray-200 bg-white dark:bg-black rounded-3xl flex flex-col shadow-sm  [&.popular]:border-primary" data-aos="fade-up" data-aos-duration="1200"> 
           <div
-            class="py-5 px-8 bg-gray-2 w-full grow-0 shrink-0 basis-auto bg-gray-100 relative rounded-t-3xl [.popular_&]:bg-primary">
+            class="py-5 px-6 md:py-3 md:px-4 lg:py-5 lg:px-6 xl:py-5 xl:px-8 bg-gray-2 w-full grow-0 shrink-0 basis-auto bg-gray-100 dark:bg-darkColor relative   rounded-t-2xl lg:rounded-t-3xl [.popular_&]:bg-primary">
             <h5
               class="text-lg lg:text-xl font-extrabold font-heading capitalize text-black dark:text-white mb-1 line-clamp-1 [.popular_&]:text-white">
               Premium</h5>
             <span
-              class="[.popular_&]:text-white text-2xl text-black font-extrabold font-heading inline-block mt-1 capitalize">$49<sub
-                class="[.popular_&]:text-white ms-1 leading-1 text-sm lg:text-base text-zinc-500 font-medium bottom-0">/month</sub></span>
+              class="[.popular_&]:text-white  text-xl lg:text-2xl text-black font-extrabold font-heading inline-block mt-1 capitalize dark:text-white">$49<sub
+                class="[.popular_&]:text-white ms-1 leading-1 text-sm lg:text-base text-zinc-500 font-medium bottom-0 dark:text-white">/month</sub></span>
             <span
               class="text-xs font-bold bg-white py-1 px-3 rounded-2xl text-primary capitalize absolute -top-2.75 left-1/2 -translate-x-1/2 shadow-primary border border-primary">Most
               popular</span>
           </div>
-          <div class="p-8 flex flex-col gap-5 basis-auto w-full h-full">
+          <div class="p-6 xl:p-8 flex flex-col gap-4 xl:gap-5 basis-auto w-full h-full">
             <p class="text-sm 2xl:text-base font-normal text-zinc-500 dark:text-white line-clamp-2">Designed for
               families
               and professionals who want broader coverage and faster support.
             </p>
-            <ul class="pricing-list mb-5">
+            <ul class="pricing-list mb-3 lg:mb-4 xl:mb-5">
               <li class="text-sm font-normal text-zinc-500 dark:text-white line-clamp-1 mt-2.5 relative pl-6">Health &
                 Life Insurance</li>
               <li class="text-sm font-normal text-zinc-500 dark:text-white line-clamp-1 mt-2.5 relative pl-6">Vehicle
@@ -338,20 +356,19 @@
               Premium</a>
           </div>
         </div>
-        <div
-          class="relative w-full border border-gray-200 bg-white dark:bg-darkcolor rounded-3xl flex flex-col shadow-sm" data-aos="fade-up" data-aos-duration="2500">
-          <div class="py-5 px-8 bg-gray-2 w-full grow-0 shrink-0 basis-auto bg-gray-100 relative rounded-t-3xl">
+        <div class="relative w-full border border-gray-200 dark:border-gray-500 bg-white dark:bg-black rounded-2xl lg:rounded-3xl flex flex-col shadow-sm  " data-aos="fade-up" data-aos-duration="2500">
+          <div class="py-5 px-6 md:py-3 md:px-4 lg:py-5 lg:px-6 xl:py-5 xl:px-8 bg-gray-2 w-full grow-0 shrink-0 basis-auto bg-gray-100 dark:bg-darkColor relative   rounded-t-2xl lg:rounded-t-3xl">
             <h5
               class="text-lg lg:text-xl font-extrabold font-heading capitalize text-black dark:text-white mb-1 line-clamp-1">
               Business</h5>
-            <span class="text-2xl text-black font-extrabold font-heading inline-block mt-1 capitalize">Custom Pricing
+            <span class=" text-xl lg:text-2xl text-black font-extrabold font-heading inline-block mt-1 capitalize dark:text-white">Custom Pricing
             </span>
           </div>
-          <div class="p-8 flex flex-col gap-5 basis-auto w-full h-full">
+          <div class="p-6 xl:p-8 flex flex-col gap-4 xl:gap-5 basis-auto w-full h-full">
             <p class="text-sm 2xl:text-base font-normal text-zinc-500 dark:text-white line-clamp-2">Comprehensive
               insurance
               solutions for startups, growing companies, and enterprises</p>
-            <ul class="pricing-list mb-5">
+            <ul class="pricing-list mb-3 lg:mb-4 xl:mb-5">
               <li class="text-sm font-normal text-zinc-500 dark:text-white line-clamp-1 mt-2.5 relative pl-6">Business
                 Liability Protection</li>
               <li class="text-sm font-normal text-zinc-500 dark:text-white line-clamp-1 mt-2.5 relative pl-6">Employee
@@ -365,7 +382,7 @@
               <li class="text-sm font-normal text-zinc-500 dark:text-white line-clamp-1 mt-2.5 relative pl-6">Priority
                 Business Support</li>
             </ul>
-            <a href="" class="secondary-btn border border-primary flex mt-auto"> Contact Sales</a>
+            <a href="" class="secondary-btn border border-primary flex mt-auto hover:border-darkBlue"> Contact Sales</a>
           </div>
         </div>
       </div>
@@ -375,65 +392,82 @@
 
 
   <!-- footer-start -->
-  <!-- <footer class="w-full pt-12 md:pt-13 lg:pt-16 xl:pt-20 pb-10 bg-darkBlue relative">
-    <div class="container mx-auto px-5 sm:px-6 lg:px-10 flex flex-col md:flex-row justify-between gap-4">
-      <div class="w-full max-w-3xs lg:max-w-xs  md:self-center">
+  <footer class="w-full pt-12 md:pt-13 lg:pt-16 xl:pt-20 pb-10 bg-darkBlue relative">
+    <div class="container max-w-420 px-5 sm:px-6 lg:px-8 xl:px-10 mx-auto flex flex-col lg:flex-row justify-between gap-4">
+      <div class="w-full max-w-2xs lg:max-w-44 xl:max-w-xs  lg:self-center">
         <a class="w-35  lg:w-50.5 h-auto block  mb-5" href="index.html">
-          <img src="assets/images/sitelogo-white.svg" alt="Logo" class="w-full h-auto  object-cover">
+          <img src="assets/images/site-whitelogo.svg" alt="Logo" class="w-full h-auto  object-cover">
         </a>
         <p class="text-sm text-white font-normal  leading-5">Bet smarter with real-time odds,
           sharp market signals, and AI-powered insights - all in one platform.</p>
       </div>
       <div class=" w-auto">
-        <h5 class="text-base  text-white font-medium leading-5.5 mb-3">Quick Links</h5>
-        <nav class="flex flex-col gap-2 text-sm text-normal  text-gray leading-5.5">
-          <a href="" class="hover:text-white">FAQ</a>
-          <a href="" class="hover:text-white">Pricing Plan</a>
-          <a href="" class="hover:text-white">Contact Us</a>
-          <a href="" class="hover:text-white">Terms & Conditions</a>
-          <a href="" class="hover:text-white">Privacy Policy</a>
+        <h5 class="text-lg capitalize  text-white font-bold font-heading  mb-3">Company</h5>
+        <nav class="flex flex-col gap-2 text-sm text-whitelight font-normal">
+          <a href="" class="hover:text-white">About Us</a>
+          <a href="" class="hover:text-white">Our Mission</a>
+          <a href="" class="hover:text-white">Careers</a>
+          <a href="" class="hover:text-white">Newsroom</a>
+          <a href="" class="hover:text-white">Blog</a>
         </nav>
       </div>
       <div class=" w-auto">
-        <h6 class="text-base  text-white font-medium leading-5.5 mb-3">Contact Us</h6>
-        <a href="mailto:info@betsignal.ai"
-          class="text-sm text-normal  text-gray leading-5.5 hover:text-white hover:underline inline-flex items-center gap-2.5 mb-4">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M17 21.25H7C3.35 21.25 1.25 19.15 1.25 15.5V8.5C1.25 4.85 3.35 2.75 7 2.75H17C20.65 2.75 22.75 4.85 22.75 8.5V15.5C22.75 19.15 20.65 21.25 17 21.25ZM7 4.25C4.14 4.25 2.75 5.64 2.75 8.5V15.5C2.75 18.36 4.14 19.75 7 19.75H17C19.86 19.75 21.25 18.36 21.25 15.5V8.5C21.25 5.64 19.86 4.25 17 4.25H7Z"
-              fill="white" />
-            <path
-              d="M11.9998 12.87C11.1598 12.87 10.3098 12.61 9.65978 12.08L6.52978 9.57997C6.20978 9.31997 6.14978 8.84997 6.40978 8.52997C6.66978 8.20997 7.13978 8.14997 7.45978 8.40997L10.5898 10.91C11.3498 11.52 12.6398 11.52 13.3998 10.91L16.5298 8.40997C16.8498 8.14997 17.3298 8.19997 17.5798 8.52997C17.8398 8.84997 17.7898 9.32997 17.4598 9.57997L14.3298 12.08C13.6898 12.61 12.8398 12.87 11.9998 12.87Z"
-              fill="white" />
-          </svg>
-          info@betsignal.ai
+        <h6 class="text-lg capitalize  text-white font-bold font-heading  mb-3">Insurance Solutions</h6>
+        <nav class="flex flex-col gap-2 text-sm text-whitelight font-normal">
+          <a href="" class="hover:text-white">Health Insurance</a>
+          <a href="" class="hover:text-white">Life Insurance</a>
+          <a href="" class="hover:text-white">Auto Insurance</a>
+          <a href="" class="hover:text-white">Home Insurance</a>
+          <a href="" class="hover:text-white">Travel Insurance</a>
+          <a href="" class="hover:text-white">Business Insurance</a>
+        </nav>
+      </div>
+      <div class=" w-auto">
+        <h6 class="text-lg capitalize  text-white font-bold font-heading  mb-3">Resources</h6>
+        <nav class="flex flex-col gap-2 text-sm text-whitelight font-normal">
+          <a href="" class="hover:text-white">Help Center</a>
+          <a href="" class="hover:text-white">Insurance Guides</a>
+          <a href="" class="hover:text-white">Claims Support</a>
+          <a href="" class="hover:text-white">Frequently Asked Questions</a>
+          <a href="" class="hover:text-white">Privacy Policy</a>
+          <a href="" class="hover:text-white">Terms of Service</a>
+        </nav>
+      </div>
+      <div class=" w-auto">
+        <h6 class="text-lg capitalize  text-white font-bold font-heading  mb-3">Contact Us</h6>
+        <a href="support@insurepilot.com
+"
+          class="text-sm text-normal  text-whitelight hover:text-white hover:underline inline-flex items-center gap-2.5 mb-4">
+          <i class="fa-solid fa-envelope"></i>
+          support@insurepilot.com
+
         </a>
         <h2 class="text-base  text-white font-medium leading-5.5 mb-4">Follow Us</h2>
         <ul class="inline-flex items-center gap-4">
           <li>
-            <a class="w-10 h-10 inline-flex items-center justify-center rounded-full text-xl text-gray p-1.5 border border-whiteLight bg-transparent hover:text-darkBlue hover:bg-white"
-              href=""><i class="fa-brands fa-facebook-f"></i></a>
+            <a class="w-10 h-10 inline-flex items-center justify-center rounded-full text-xl text-whitelight p-1.5 border border-whitelight bg-transparent hover:text-primary hover:border-white hover:bg-white"
+              href=""><span><i class="fa-brands fa-facebook-f"></i> </span></a>
           </li>
           <li>
-            <a class="w-10 h-10 inline-flex items-center justify-center rounded-full text-xl text-gray p-1.5 border border-whiteLight bg-transparent hover:text-darkBlue hover:bg-white"
-              href=""><i class="fa-brands fa-x-twitter"></i></a>
+            <a class="w-10 h-10 inline-flex items-center justify-center rounded-full text-xl text-whitelight p-1.5 border border-whitelight bg-transparent hover:text-primary hover:border-white hover:bg-white"
+              href=""><span><i class="fa-brands fa-x-twitter"></i> </span></a>
           </li>
           <li>
-            <a class="w-10 h-10 inline-flex items-center justify-center rounded-full text-xl text-gray p-1.5 border border-whiteLight bg-transparent hover:text-darkBlue hover:bg-white"
-              href=""><i class="fa-brands fa-instagram"></i></a>
+            <a class="w-10 h-10 inline-flex items-center justify-center rounded-full text-xl text-whitelight p-1.5 border border-whitelight bg-transparent hover:text-primary hover:border-white hover:bg-white"
+              href=""><span><i class="fa-brands fa-instagram"></i> </span></a>
           </li>
           <li>
-            <a class="w-10 h-10 inline-flex items-center justify-center rounded-full text-xl text-gray p-1.5 border border-whiteLight bg-transparent hover:text-darkBlue hover:bg-white"
-              href=""><i class="fa-brands fa-linkedin-in"></i></a>
+            <a class="w-10 h-10 inline-flex items-center justify-center rounded-full text-xl text-whitelight p-1.5 border border-whitelight bg-transparent hover:text-primary hover:border-white hover:bg-white"
+              href=""><span><i class="fa-brands fa-linkedin-in"></i> </span></a>
           </li>
           <li>
-            <a class="w-10 h-10 inline-flex items-center justify-center rounded-full text-xl text-gray p-1.5 border border-whiteLight bg-transparent hover:text-darkBlue hover:bg-white"
-              href=""><i class="fa-brands fa-youtube"></i></a>
+            <a class="w-10 h-10 inline-flex items-center justify-center rounded-full text-xl text-whitelight p-1.5 border border-whitelight bg-transparent hover:text-primary hover:border-white hover:bg-white"
+              href=""><span><i class="fa-brands fa-youtube"></i> </span></a>
           </li>
         </ul>
       </div>
     </div>
-  </footer> -->
+  </footer>
   <!-- footer-end -->
 </body>
 <!-- jQuery-CDN -->
