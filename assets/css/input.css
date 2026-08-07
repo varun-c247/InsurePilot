@@ -1,17 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 @import "tailwindcss";
-
+@custom-variant dark (&:where(.dark, .dark *));
+:root{
+    --dark-body:#323232;
+}
 @theme {
     --font-body:  "Roboto", sans-serif;
     --font-heading:"Manrope", sans-serif;;
     --color-primary:#027EF5;
-    --color-secondary:#00123D;
+    --color-darkBlue:#00123D;
     --color-whitelight:rgba(255, 255, 255, 0.5);
+    --color-blacklight:rgba(0, 0, 0, 0.5);
+    --color-:#323232;
     }
 @layer components {
     .primary-btn{
-        @apply transition inline-flex items-center justify-center w-auto min-w-25 h-10 xl:h-11.25 bg-primary text-white text-sm xl:text-base font-medium rounded-lg py-2 px-7 capitalize relative hover:bg-secondary focus:bg-secondary active:bg-secondary;
+        @apply transition inline-flex items-center justify-center w-auto min-w-25 h-10 xl:h-11.25 bg-primary text-white text-sm xl:text-base font-medium rounded-lg py-2 px-7 capitalize relative hover:bg-darkBlue focus:bg-darkBlue active:bg-darkBlue;
+    }
+    .secondary-btn{
+        @apply transition inline-flex items-center justify-center w-auto min-w-25 h-10 xl:h-11.25 bg-white text-primary text-sm xl:text-base font-medium rounded-lg py-2 px-7 capitalize relative hover:bg-darkBlue hover:text-white focus:bg-darkBlue focus:text-white active:bg-darkBlue active:text-white;
     }
 }
 html{
