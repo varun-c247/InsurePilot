@@ -4,4 +4,8 @@ npm-debug.log*
 yarn-debug.log*
 .DS_Store
 .env
+<<<<<<< HEAD
 output.css
+=======
+output.cssgit
+>>>>>>> 6c6dd10dadc7bee59cbe75254a40555f21ce9076
