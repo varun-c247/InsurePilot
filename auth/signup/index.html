@@ -28,7 +28,7 @@
 
 <body class="antialiased overflow-x-hidden">
   <!-- signup-section-start -->
-  <section class="log-in w-full lg:h-dvh relative flex bg-blue-50 dark:bg-black">
+  <section class="log-in w-full min-h-dvh lg:h-dvh relative flex bg-blue-50 dark:bg-black">
     <div class="w-full h-full basis-auto hidden lg:block">
       <img src="../../assets/images/singup.png" alt="login-bg" class="w-full h-full object-cover" />
     </div>
@@ -146,6 +146,17 @@
     </div>
   </section>
   <!-- signup-section-end -->
+  <!-- theme-button-start -->
+  <button
+    class="themeToggle shadow-md  w-7 md:w-10 lg:w-12 2xl:w-14  h-7 md:h-10 lg:h-12 2xl:h-14 flex items-center justify-center p-1 transition-colors duration-300 rounded-full bg-gray-2 text-gray-500 cursor-pointer hover:bg-gray-300 hover:text-gray-600 dark:text-black bg-white hover:dark:text-black hover:dark:bg-white ms-auto fixed z-10 left-3 top-3 lg:top-[unset] lg:left-8 lg:bottom-8 lg:animate-bounce">
+    <span class="text-xl [.dark_&]:hidden w-full max-w-5.5 md:max-w-7.5 xl:max-w-9">
+      <img src="../../assets/icons/sun-icon.png" class="w-full h-full object-contain object-center" alt="Sun-icon" />
+    </span>
+    <span class="hidden text-xl [.dark_&]:block w-full max-w-5.5 md:max-w-7.5 xl:max-w-9">
+      <img src="../../assets/icons/moon-icon.png" class="w-full h-full object-contain object-center" alt="Moon-icon" />
+    </span>
+  </button>
+  <!-- theme-button-end -->
 </body>
 <!-- jQuery-CDN -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/4.0.0/jquery.min.js"></script>
