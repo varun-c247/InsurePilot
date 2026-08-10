@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" class="overflow-x-hidden">
+<html lang="en" class="overflow-x-hidden [&.freeze]:overflow-hidden">
+
 <head>
   <!-- meta-tags-start -->
   <meta charset="UTF-8">
@@ -14,9 +15,7 @@
   <!-- .Fontawesome CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css" />
   <!-- owl-carousel-CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
-  <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css" />
   <!-- AOS CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
   <!-- Output CSS -->
@@ -24,14 +23,673 @@
   <!-- favicon-link -->
   <link rel="icon" type="image/x-icon" href="assets/icons/favicon.svg">
 </head>
-<body class="antialiased overflow-x-hidden">
+
+<body class="antialiased overflow-x-hidden bg-white dark:bg-black">
+  <!-- body-overlay -->
+   <div class="body-overlay fixed inset-0 z-8 w-full h-dvh bg-blacklight hidden [&.active]:block"></div>
+  
+  <!-- header-section-start -->
+  <header
+    class="w-full bg-whitelight dark:bg-blacklight backdrop-blur-sm h-16 lg:h-19 2xl:h-23 fixed left-0 top-0 border-b border-gray-200 dark:border-gray-500 flex items-center z-9 [.freeze_&]:bg-white [.freeze_&]:dark:bg-black ">
+    <div
+      class="container max-w-420 px-5 sm:px-6 lg:px-8 xl:px-10 mx-auto flex items-center justify-between gap-4 relative">
+      <a href="#" class="block w-auto max-w-32 lg:max-w-42 2xl:max-w-50">
+        <img src="assets/images/site-logo.svg" alt="Logo" class="w-full h-auto  object-cover dark:hidden">
+        <img src="assets/images/site-whitelogo.svg" alt="Logo" class="w-full h-auto  object-cover hidden dark:block">
+      </a>
+      <nav
+        class="flex flex-col lg:flex-row lg:items-center gap-5 lg:gap-10 xl;gap-13 2xl:gap-15 text-lg lg:text-sm 2xl:text-base text-gray-500 font-medium capitalize dark:text-gray-300 fixed left-0 top-16 lg:relative lg:top-0  h-[calc(100dvh-65px)] lg:h-auto bg-white lg:bg-transparent border-r border-gray-200 lg:border-r-0 w-full max-w-3xs lg:w-auto lg:max-w-none py-5 px-8 lg:px-0 lg:py-0 -translate-x-full lg:translate-x-0 headerNav [&.show]:translate-x-0 transition-3 dark:bg-black lg:dark:bg-transparent">
+        <a href="#"
+          class="nav-link active hover:text-gray-700 hover:dark:text-white transition-colors duration-300 [&.active]:text-primary  focus:text-gray-700 focus:dark:text-white">Home</a>
+        <a href="#"
+          class="nav-link hover:text-gray-700 hover:dark:text-white transition-colors duration-300 [&.active]:text-primary  focus:text-gray-700 focus:dark:text-white">about</a>
+        <a href="#"
+          class="nav-link hover:text-gray-700 hover:dark:text-white transition-colors duration-300 [&.active]:text-primary  focus:text-gray-700 focus:dark:text-white">featured</a>
+        <a href="#"
+          class="nav-link hover:text-gray-700 hover:dark:text-white transition-colors duration-300 [&.active]:text-primary  focus:text-gray-700 focus:dark:text-white">prcing</a>
+        <a href="#"
+          class="nav-link hover:text-gray-700 hover:dark:text-white transition-colors duration-300 [&.active]:text-primary  focus:text-gray-700 focus:dark:text-white">contact</a>
+          <a href="#"
+          class="nav-link hover:text-gray-700 hover:dark:text-white transition-colors duration-300 [&.active]:text-primary  focus:text-gray-700 focus:dark:text-white lg:hidden">sign up</a>
+          <a href="" class="primary-btn lg:hidden">log in</a>
+      </nav>
+      <div class="hidden lg:flex items-center gap-5">
+        <a href=""
+          class="text-sm 2xl:text-base text-gray-500 font-medium capitalize dark:text-gray-300 hover:text-primary transition-colors duration-300 focus:dark:text-primary">Sign
+          up</a>
+        <a href="" class="primary-btn">log in</a>
+        <button
+          class="themeToggle shadow-md w-7 xl:w-10 h-7 xl:h-10 flex items-center justify-center p-1 transition-colors duration-300 rounded-full bg-gray-2 text-gray-500 cursor-pointer hover:bg-gray-300 hover:text-gray-600 dark:text-black dark:bg-white hover:dark:text-black hover:dark:bg-white">
+          <span class="text-xl [.dark_&]:hidden w-full max-w-6 xl:max-w-9.5">
+            <img src="assets/icons/sun-icon.png" class="w-full h-full object-contain object-center"
+              alt="Sun-icon" />
+          </span>
+          <span class="hidden text-xl [.dark_&]:block w-full max-w-6 xl:max-w-9.5">
+            <img src="assets/icons/moon-icon.png" class="w-full h-full object-contain object-center"
+              alt="Moon-icon" />
+          </span>
+        </button>
+      </div>
+      <button
+          class="themeToggle shadow-md  w-7 xl:w-10 h-7 xl:h-10 flex items-center justify-center p-1 transition-colors duration-300 rounded-full bg-gray-2 text-gray-500 cursor-pointer hover:bg-gray-300 hover:text-gray-600 dark:text-black dark:bg-white hover:dark:text-black hover:dark:bg-white lg:hidden ms-auto">
+          <span class="text-xl [.dark_&]:hidden w-full max-w-6 xl:max-w-9.5">
+            <img src="assets/icons/sun-icon.png" class="w-full h-full object-contain object-center"
+              alt="Sun-icon" />
+          </span>
+          <span class="hidden text-xl [.dark_&]:block w-full max-w-6 xl:max-w-9.5">
+            <img src="assets/icons/moon-icon.png" class="w-full h-full object-contain object-center"
+              alt="Moon-icon" />
+          </span>
+        </button>
+      <!-- Mobile menu button -->
+      <button class="lg:hidden hamburgerMenu transition-transform duration-300 ease-in-out " aria-label="Open menu">
+        <span
+          class="w-7.5 h-0.75 bg-primary block my-1.5 transition-transform duration-300 ease-in-out  [.active_&]:rotate-45 [.active_&]:mt-0.75 [.active_&]:mb-0"></span>
+        <span
+          class="w-7.5 h-0.75 bg-primary block my-1.5 transition-transform duration-300 ease-in-out  [.active_&]:hidden"></span>
+        <span
+          class="w-7.5 h-0.75 bg-primary block my-1.5 transition-transform duration-300 ease-in-out  [.active_&]:-rotate-45 [.active_&]:-mt-0.75 [.active_&]:mb-0"></span>
+      </button>
+      <!-- Mobile Nav Panel -->
+    </div>
+  </header>
+  <!-- header-section-end -->
+
+  <!-- hero-section-start -->
+  <section class="hero pt-16 lg:pt-19 2xl:pt-23 px-0 relative border-b border-gray-50 dark:border-gray-800">
+    <div class="hero-slider w-full h-auto owl-carousel owl-theme">
+      <div class="slider_item py-10 sm:py-15 w-full h-auto md:h-[56dvh] xl:h-[68dvh] 2xl:h-[75dvh] relative flex items-center">
+        <figure class="hero-img absolute w-full h-full md:max-w-[78dvw] left-0 top-0 mb-0">
+          <img src="assets/images/hero-1.jpg" class="w-full h-full object-cover object-center" alt="hero-image" />
+        </figure>
+        <div class="container max-w-420 px-5 sm:px-6 lg:px-8 xl:px-10 mx-auto">
+          <div class="w-full max-w-2xl xl:max-w-3xl md:ms-auto p-5 sm:p-10 xl:12 2xl:p-15 bg-primary relative z-1 shadow-md" data-aos="flip-right"
+            data-aos-duration="2000">
+            <span class="hidden sm:block absolute left-0 top-0 w-40 h-40 z-0 
+                          before:content-['']
+                          before:absolute
+                          before:w-full 
+                          before:h-px 
+                          before:bg-white 
+                          before:top-5
+                          before:left-2
+                          2xl:before:top-9 
+                          2xl:before:left-4
+
+                          after:content-['']
+                          after:absolute
+                          after:w-px 
+                          after:h-full 
+                          after:bg-white 
+                          after:top-2 
+                          after:left-5
+                          2xl:after:top-4 
+                          2xl:after:left-9
+                          "></span>
+            <div
+              class="w-auto inline-flex items-center gap-2 py-1.5 px-5 bg-white shadow-sm border border-white text-darkBlue text-xs sm:text-sm font-medium rounded-4xl backdrop-blur-md mb-3 2xl:mb-5">
+              <span class="text-yellow-500 grow-0 shrink-0 basis-auto"><i class="fa-solid fa-star"></i></span>
+              <span class="">Trusted by 50,000+ Customers</span>
+            </div>
+            <div class="relative z-1">
+              <h1 class="text-2xl leading-7 sm:text-3xl sm:leading-9 xl:text-4xl xl:leading-10 2xl:text-5xl 2xl:leading-14 font-heading font-extrabold text-white mb-2.5 xl:mb-3 2xl:mb-5">Insurance Made Simple, Fast,
+                and Built
+                <span class="text-yellow-400">Around You</span>
+              </h1>
+              <p class="text-sm 2xl:text-base font-normal text-white mb-5 xl:mb-7  max-w-xl line-clamp-3">Protect what matters most with a
+                smarter digital
+                insurance platform. Compare plans, receive personalized coverage recommendations, purchase policies
+                online, and manage claims effortlessly—all from one securedashboard.</p>
+              <a href="" class="secondary-btn xl:min-w-40 2xl:min-w-45 2xl:h-12">Explore Insurance Plans</a>
+            </div>
+
+            <span class="hidden sm:block absolute right-0 bottom-0 w-40 h-40 z-0 
+                          before:content-['']
+                          before:absolute
+                          before:w-full 
+                          before:h-px 
+                          before:bg-white 
+                          before:bottom-5
+                          before:right-2
+                          2xl:before:bottom-9 
+                          2xl:before:right-4
+
+                          after:content-['']
+                          after:absolute
+                          after:w-px 
+                          after:h-full 
+                          after:bg-white 
+                          after:bottom-2 
+                          after:right-5
+                          2xl:after:bottom-4 
+                          2xl:after:right-9
+                          "></span>
+          </div>
+        </div>
+      </div>
+      <div class="slider_item py-10 sm:py-15 w-full h-auto md:h-[56dvh] xl:h-[68dvh] 2xl:h-[75dvh] relative flex items-center">
+        <figure class="hero-img absolute w-full h-full md:max-w-[78dvw] left-0 top-0 mb-0">
+          <img src="assets/images/hero-3.jpg" class="w-full h-full object-cover object-center" alt="hero-image" />
+        </figure>
+        <div class="container max-w-420 px-5 sm:px-6 lg:px-8 xl:px-10 mx-auto">
+          <div class="w-full max-w-2xl xl:max-w-3xl md:ms-auto p-5 sm:p-10 xl:12 2xl:p-15 bg-primary relative z-1 shadow-md" data-aos="flip-right"
+            data-aos-duration="2000">
+            <span class="hidden sm:block absolute left-0 top-0 w-40 h-40 z-0 
+                          before:content-['']
+                          before:absolute
+                          before:w-full 
+                          before:h-px 
+                          before:bg-white 
+                          before:top-5
+                          before:left-2
+                          2xl:before:top-9 
+                          2xl:before:left-4
+
+                          after:content-['']
+                          after:absolute
+                          after:w-px 
+                          after:h-full 
+                          after:bg-white 
+                          after:top-2 
+                          after:left-5
+                          2xl:after:top-4 
+                          2xl:after:left-9
+                          "></span>
+            <div
+              class="w-auto inline-flex items-center gap-2 py-1.5 px-5 bg-white shadow-sm border border-white text-darkBlue text-xs sm:text-sm font-medium rounded-4xl backdrop-blur-md mb-3 2xl:mb-5">
+              <span class="text-yellow-500 grow-0 shrink-0 basis-auto"><i class="fa-solid fa-shield-halved"></i></span>
+              <span class="">Smarter Coverage • Trusted Protection</span>
+            </div>
+            <div class="relative z-1">
+              <h1 class="text-2xl leading-7 sm:text-3xl sm:leading-9 xl:text-4xl xl:leading-10 2xl:text-5xl 2xl:leading-14 font-heading font-extrabold text-white mb-2.5 xl:mb-3 2xl:mb-5">Why Choose 
+                <span class="text-yellow-400">InsurePilot?</span>
+              </h1>
+              <ul class="hero-list">
+                <li class="text-sm 2xl:text-base font-normal text-white mb-1 max-w-xl relative ps-5
+                ">Compare Multiple Insurance Plans</li>
+                <li class="text-sm 2xl:text-base font-normal text-white mb-1 max-w-xl relative ps-5
+                ">Secure Digital Policy Management</li>
+                <li class="text-sm 2xl:text-base font-normal text-white mb-1 max-w-xl relative ps-5
+                ">Coverage Tailored to Your Needs</li>
+                <li class="text-sm 2xl:text-base font-normal text-white mb-1 max-w-xl relative ps-5
+                ">Personalized Insurance Recommendations</li>
+                <li class="text-sm 2xl:text-base font-normal text-white mb-5 max-w-xl relative ps-5
+                ">Support From Insurance Experts</li>
+              </ul>
+              <a href="" class="secondary-btn xl:min-w-40 2xl:min-w-45 2xl:h-12">Explore Coverage</a>
+            </div>
+
+            <span class="hidden sm:block absolute right-0 bottom-0 w-40 h-40 z-0 
+                          before:content-['']
+                          before:absolute
+                          before:w-full 
+                          before:h-px 
+                          before:bg-white 
+                          before:bottom-5
+                          before:right-2
+                          2xl:before:bottom-9 
+                          2xl:before:right-4
+
+                          after:content-['']
+                          after:absolute
+                          after:w-px 
+                          after:h-full 
+                          after:bg-white 
+                          after:bottom-2 
+                          after:right-5
+                          2xl:after:bottom-4 
+                          2xl:after:right-9
+                          "></span>
+          </div>
+        </div>
+      </div>
+      <div class="slider_item py-10 sm:py-15 w-full h-auto md:h-[56dvh] xl:h-[68dvh] 2xl:h-[75dvh] relative flex items-center">
+        <figure class="hero-img absolute w-full h-full md:max-w-[78dvw] left-0 top-0 mb-0">
+          <img src="assets/images/hero-2.jpg" class="w-full h-full object-cover object-center" alt="hero-image" />
+        </figure>
+        <div class="container max-w-420 px-5 sm:px-6 lg:px-8 xl:px-10 mx-auto">
+          <div class="w-full max-w-2xl xl:max-w-3xl md:ms-auto p-5 sm:p-10 xl:12 2xl:p-15 bg-primary relative z-1 shadow-md" data-aos="flip-right"
+            data-aos-duration="2000">
+            <span class="hidden sm:block absolute left-0 top-0 w-40 h-40 z-0 
+                          before:content-['']
+                          before:absolute
+                          before:w-full 
+                          before:h-px 
+                          before:bg-white 
+                          before:top-5
+                          before:left-2
+                          2xl:before:top-9 
+                          2xl:before:left-4
+
+                          after:content-['']
+                          after:absolute
+                          after:w-px 
+                          after:h-full 
+                          after:bg-white 
+                          after:top-2 
+                          after:left-5
+                          2xl:after:top-4 
+                          2xl:after:left-9
+                          "></span>
+            <div
+              class="w-auto inline-flex items-center gap-2 py-1.5 px-5 bg-white shadow-sm border border-white text-darkBlue text-xs sm:text-sm font-medium rounded-4xl backdrop-blur-md mb-3 2xl:mb-5">
+              <span class="text-yellow-500 grow-0 shrink-0 basis-auto"><i class="fa-solid fa-star"></i></span>
+              <span class="">Simple Insurance • Personalized Protection</span>
+            </div>
+            <div class="relative z-1">
+              <h1 class="text-2xl leading-7 sm:text-3xl sm:leading-9 xl:text-4xl xl:leading-10 2xl:text-5xl 2xl:leading-14 font-heading font-extrabold text-white mb-2.5 xl:mb-3 2xl:mb-5">The Smarter Way to Find and 
+                <span class="text-yellow-400">Manage Insurance</span>
+              </h1>
+              <p class="text-sm 2xl:text-base font-normal text-white mb-5 xl:mb-7  max-w-xl">Take control of your insurance with InsurePilot. Compare personalized coverage options, get transparent quotes, manage your policies, and handle claims from one simple and secure platform.</p>
+              <a href="" class="secondary-btn xl:min-w-40 2xl:min-w-45 2xl:h-12">See How It Works</a>
+            </div>
+
+            <span class="hidden sm:block absolute right-0 bottom-0 w-40 h-40 z-0 
+                          before:content-['']
+                          before:absolute
+                          before:w-full 
+                          before:h-px 
+                          before:bg-white 
+                          before:bottom-5
+                          before:right-2
+                          2xl:before:bottom-9 
+                          2xl:before:right-4
+
+                          after:content-['']
+                          after:absolute
+                          after:w-px 
+                          after:h-full 
+                          after:bg-white 
+                          after:bottom-2 
+                          after:right-5
+                          2xl:after:bottom-4 
+                          2xl:after:right-9
+                          "></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- hero-section-end -->
+
+  <!-- featured-section-start -->
+  <section class="py-10 md:py-13 lg:py-16 xl:py-20 relative bg-blue-50 dark:bg-darkColor">
+    <div class="container max-w-420 px-5 sm:px-6 lg:px-8 xl:px-10 mx-auto">
+      <div class="w-full mx-auto max-w-4xl text-center mb-5 lg:mb-7 2xl:mb-10">
+        <h2 class="text-xl md:text-2xl xl:text-3xl 2xl:text-4xl font-heading font-extrabold text-black dark:text-white mb-3 capitalize">
+          Everything You Need to Protect <span class="text-yellow-400">What Matters</span>
+        </h2>
+        <p class="text-sm 2xl:text-base font-normal text-zinc-500 dark:text-white line-clamp-3  max-w-3xl mx-auto">
+          InsurePilot
+          combines modern technology with trusted insurance
+          expertise, giving you complete control
+          over your coverage through one easy-to-use platform.
+        </p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 2xl:gap-7.5">
+        <div class="bg-white relative px-6 py-6 md:px-8 md:py-8 2xl:py-12 w-full rounded-ss-4xl rounded-ee-4xl lg:rounded-ss-[3rem] lg:rounded-ee-[3rem] 2xl:rounded-ss-[4rem] 2xl:rounded-ee-[4rem] shadow-sm transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-primary border-transparent dark:bg-black ">
+          <span class="w-15 h-15 p-2 bg-yellow-100 flex items-center justify-center mb-5 rounded-lg">
+            <img src="assets/icons/Instant-Approval.png" class="w-11 h-11 object-contain object-center"
+              alt="Instant Policy Approval">
+          </span>
+          <h3
+            class="text-lg lg:text-xl font-extrabold font-heading capitalize text-black dark:text-white mb-2.5 line-clamp-1">
+            Instant Policy Approval
+          </h3>
+          <p class="text-sm 2xl:text-base font-normal text-zinc-500 dark:text-white line-clamp-3 relative 
+          before:content-['']
+          before:absolute
+          before:w-0.75
+          xl:before:w-1
+          before:h-full
+          before:bg-primary
+          before:left-0
+          before:top-0
+          ps-3
+          lg:ps-3.5
+          xl:ps-5">
+            Apply online and receive policy approval within minutes with a simple, paperless process.
+          </p>
+        </div>
+        <div class="bg-white relative px-6 py-6 lg:px-8 lg:py-8 2xl:py-12 w-full rounded-ss-4xl rounded-ee-4xl lg:rounded-ss-[3rem] lg:rounded-ee-[3rem] 2xl:rounded-ss-[4rem] 2xl:rounded-ee-[4rem] shadow-sm transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-primary border-transparent dark:bg-black ">
+          <span class="w-15 h-15 p-2 bg-yellow-100 flex items-center justify-center mb-5 rounded-lg">
+            <img src="assets/icons/Personalized-Coverage.png" class="w-11 h-11 object-contain object-center"
+              alt="Personalized Coverage">
+          </span>
+          <h4
+            class="text-lg lg:text-xl font-extrabold font-heading capitalize text-black dark:text-white mb-2.5 line-clamp-1">
+            Personalized Coverage
+          </h4>
+          <p class="text-sm 2xl:text-base font-normal text-zinc-500 dark:text-white line-clamp-3 relative 
+          before:content-['']
+          before:absolute
+          before:w-0.75
+          xl:before:w-1
+          before:h-full
+          before:bg-primary
+          before:left-0
+          before:top-0
+          ps-3
+          lg:ps-3.5
+          xl:ps-5">
+            Our intelligent recommendation engine helps you find insurance plans that match your lifestyle, goals, and
+            budget.
+          </p>
+        </div>
+        <div class="bg-white relative px-6 py-6 lg:px-8 lg:py-8 2xl:py-12 w-full rounded-ss-4xl rounded-ee-4xl lg:rounded-ss-[3rem] lg:rounded-ee-[3rem] 2xl:rounded-ss-[4rem] 2xl:rounded-ee-[4rem] shadow-sm transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-primary border-transparent dark:bg-black ">
+          <span class="w-15 h-15 p-2 bg-yellow-100 flex items-center justify-center mb-5 rounded-lg">
+            <img src="assets/icons/Digital-Claims.png" class="w-11 h-11 object-contain object-center"
+              alt="Fast Digital Claims">
+          </span>
+          <h5
+            class="text-lg lg:text-xl font-extrabold font-heading capitalize text-black dark:text-white mb-2.5 line-clamp-1">
+            Fast Digital Claims
+          </h5>
+          <p class="text-sm 2xl:text-base font-normal text-zinc-500 dark:text-white line-clamp-3 relative 
+          before:content-['']
+          before:absolute
+          before:w-0.75
+          xl:before:w-1
+          before:h-full
+          before:bg-primary
+          before:left-0
+          ps-3
+          lg:ps-3.5
+          xl:ps-5">
+            Submit claims online, upload documents securely, and track every step of the process in real time.
+          </p>
+        </div>
+        <div class="bg-white relative px-6 py-6 lg:px-8 lg:py-8 2xl:py-12 w-full rounded-ss-4xl rounded-ee-4xl lg:rounded-ss-[3rem] lg:rounded-ee-[3rem] 2xl:rounded-ss-[4rem] 2xl:rounded-ee-[4rem] shadow-sm transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-primary border-transparent dark:bg-black ">
+          <span class="w-15 h-15 p-2 bg-yellow-100 flex items-center justify-center mb-5 rounded-lg">
+            <img src="assets/icons/Policie-OnePlace.png" class="w-11 h-11 object-contain object-center"
+              alt="All Your Policies in One Place">
+          </span>
+          <h6
+            class="text-lg lg:text-xl font-extrabold font-heading capitalize text-black dark:text-white mb-2.5 line-clamp-1">
+            All Your Policies in One Place
+          </h6>
+          <p class="text-sm 2xl:text-base font-normal text-zinc-500 dark:text-white line-clamp-3 relative 
+          before:content-['']
+          before:absolute
+          before:w-0.75
+          xl:before:w-1
+          before:h-full
+          before:bg-primary
+          before:left-0
+          before:top-0
+          ps-3
+          lg:ps-3.5
+          xl:ps-5">
+            View, renew, download, and manage every insurance policy from a single secure account.
+          </p>
+        </div>
+        <div class="bg-white relative px-6 py-6 lg:px-8 lg:py-8 2xl:py-12 w-full rounded-ss-4xl rounded-ee-4xl lg:rounded-ss-[3rem] lg:rounded-ee-[3rem] 2xl:rounded-ss-[4rem] 2xl:rounded-ee-[4rem] shadow-sm transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-primary border-transparent dark:bg-black ">
+          <span class="w-15 h-15 p-2 bg-yellow-100 flex items-center justify-center mb-5 rounded-lg">
+            <img src="assets/icons/Expert-Guidance.png" class="w-11 h-11 object-contain object-center"
+              alt="Expert Guidance">
+          </span>
+          <h2
+            class="text-lg lg:text-xl font-extrabold font-heading capitalize text-black dark:text-white mb-2.5 line-clamp-1">
+            Expert Guidance
+          </h2>
+          <p class="text-sm 2xl:text-base font-normal text-zinc-500 dark:text-white line-clamp-3 relative 
+          before:content-['']
+          before:absolute
+          before:w-0.75
+          xl:before:w-1
+          before:h-full
+          before:bg-primary
+          before:left-0
+          before:top-0
+          ps-3
+          lg:ps-3.5
+          xl:ps-5">
+            Speak with experienced insurance professionals whenever you need help choosing coverage or filing a claim.
+          </p>
+        </div>
+        <div class="bg-white relative px-6 py-6 lg:px-8 lg:py-8 2xl:py-12 w-full rounded-ss-4xl rounded-ee-4xl lg:rounded-ss-[3rem] lg:rounded-ee-[3rem] 2xl:rounded-ss-[4rem] 2xl:rounded-ee-[4rem] shadow-sm transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-primary border-transparent dark:bg-black ">
+          <span class="w-15 h-15 p-2 bg-yellow-100 flex items-center justify-center mb-5 rounded-lg">
+            <img src="assets/icons/Grade-Security.png" class="w-11 h-11 object-contain object-center"
+              alt="Enterprise-Grade Security">
+          </span>
+          <h3
+            class="text-lg lg:text-xl font-extrabold font-heading capitalize text-black dark:text-white mb-2.5 line-clamp-1">
+            Enterprise-Grade Security
+          </h3>
+          <p class="text-sm 2xl:text-base font-normal text-zinc-500 dark:text-white line-clamp-3 relative 
+          before:content-['']
+          before:absolute
+          before:w-0.75
+          xl:before:w-1
+          before:h-full
+          before:bg-primary
+          before:left-0
+          before:top-0
+          ps-3
+          lg:ps-3.5
+          xl:ps-5">
+            Your personal information and policy details are protected with advanced encryption and industry-leading
+            security standards.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- featured-section-end -->
+
+  <!-- pricing-section-start  -->
+  <section class="py-10 md:py-13 lg:py-16 xl:py-20 relative">
+    <div class="container max-w-420 px-5 sm:px-6 lg:px-8 xl:px-10 mx-auto">
+      <div class="w-full mx-auto max-w-3xl text-center mb-5 lg:mb-7 2xl:mb-10">
+        <h4 class="text-xl md:text-2xl xl:text-3xl 2xl:text-4xl font-heading font-extrabold text-black dark:text-white mb-3 capitalize">Flexible
+          Plans for Individuals, Families, and Businesses </h4>
+        <p class="text-sm 2xl:text-base font-normal text-zinc-500 dark:text-white line-clamp-3  max-w-3xl mx-auto">
+          Choose a plan that fits your needs today and upgrade anytime as your life or business grows
+        </p>
+      </div>
+      <div class="grid md:grid-cols-3 lg:grid-cols-3 gap-5 md:gap-2 lg:gap-6 2xl:gap-7.5 w-full 2xl:max-w-6xl mx-auto">
+        <div class="relative w-full border border-gray-200 dark:border-gray-500 bg-white dark:bg-black rounded-2xl lg:rounded-3xl flex flex-col shadow-sm " data-aos="fade-up" data-aos-duration="2500">
+          <div class="py-5 px-6 md:py-3 md:px-4 lg:py-5 lg:px-6 xl:py-5 xl:px-8 bg-gray-2 w-full grow-0 shrink-0 basis-auto bg-gray-100 dark:bg-darkColor relative   rounded-t-2xl lg:rounded-t-3xl">
+            <h5
+              class="text-lg lg:text-xl font-extrabold font-heading capitalize text-black dark:text-white mb-1 line-clamp-1">
+              Essential
+            </h5>
+            <span class=" text-xl lg:text-2xl text-black font-extrabold font-heading inline-block mt-1 capitalize dark:text-white">$19<sub
+                class="ms-1 leading-1 text-sm lg:text-base text-zinc-500 font-medium bottom-0 dark:text-white">/month</sub></span>
+
+          </div>
+          <div class="p-6 xl:p-8 flex flex-col gap-4 xl:gap-5 basis-auto w-full h-full">
+            <p class="text-sm 2xl:text-base font-normal text-zinc-500 dark:text-white line-clamp-2">Perfect for
+              individuals
+              looking for affordable everyday protection.
+            </p>
+            <ul class="pricing-list mb-3 lg:mb-4 xl:mb-5">
+              <li class="text-sm font-normal text-zinc-500 dark:text-white line-clamp-1 mt-2.5 relative pl-6">Health
+                Insurance Coverage</li>
+              <li class="text-sm font-normal text-zinc-500 dark:text-white line-clamp-1 mt-2.5 relative pl-6">Instant
+                Online Quotes</li>
+              <li class="text-sm font-normal text-zinc-500 dark:text-white line-clamp-1 mt-2.5 relative pl-6">Digital
+                Policy Access</li>
+              <li class="text-sm font-normal text-zinc-500 dark:text-white line-clamp-1 mt-2.5 relative pl-6">Secure
+                Claims Portal</li>
+              <li class="text-sm font-normal text-zinc-500 dark:text-white line-clamp-1 mt-2.5 relative pl-6">Email
+                Support</li>
+            </ul>
+            <a href="" class="secondary-btn border border-primary flex mt-auto hover:border-darkBlue">Choose Essential</a>
+          </div>
+        </div>
+        <div class="popular relative w-full border border-gray-200 bg-white dark:bg-black rounded-3xl flex flex-col shadow-sm  [&.popular]:border-primary" data-aos="fade-up" data-aos-duration="1200"> 
+          <div
+            class="py-5 px-6 md:py-3 md:px-4 lg:py-5 lg:px-6 xl:py-5 xl:px-8 bg-gray-2 w-full grow-0 shrink-0 basis-auto bg-gray-100 dark:bg-darkColor relative   rounded-t-2xl lg:rounded-t-3xl [.popular_&]:bg-primary">
+            <h5
+              class="text-lg lg:text-xl font-extrabold font-heading capitalize text-black dark:text-white mb-1 line-clamp-1 [.popular_&]:text-white">
+              Premium</h5>
+            <span
+              class="[.popular_&]:text-white  text-xl lg:text-2xl text-black font-extrabold font-heading inline-block mt-1 capitalize dark:text-white">$49<sub
+                class="[.popular_&]:text-white ms-1 leading-1 text-sm lg:text-base text-zinc-500 font-medium bottom-0 dark:text-white">/month</sub></span>
+            <span
+              class="text-xs font-bold bg-white py-1 px-3 rounded-2xl text-primary capitalize absolute -top-2.75 left-1/2 -translate-x-1/2 shadow-primary border border-primary">Most
+              popular</span>
+          </div>
+          <div class="p-6 xl:p-8 flex flex-col gap-4 xl:gap-5 basis-auto w-full h-full">
+            <p class="text-sm 2xl:text-base font-normal text-zinc-500 dark:text-white line-clamp-2">Designed for
+              families
+              and professionals who want broader coverage and faster support.
+            </p>
+            <ul class="pricing-list mb-3 lg:mb-4 xl:mb-5">
+              <li class="text-sm font-normal text-zinc-500 dark:text-white line-clamp-1 mt-2.5 relative pl-6">Health &
+                Life Insurance</li>
+              <li class="text-sm font-normal text-zinc-500 dark:text-white line-clamp-1 mt-2.5 relative pl-6">Vehicle
+                Protection</li>
+              <li class="text-sm font-normal text-zinc-500 dark:text-white line-clamp-1 mt-2.5 relative pl-6">Home
+                Insurance Options</li>
+              <li class="text-sm font-normal text-zinc-500 dark:text-white line-clamp-1 mt-2.5 relative pl-6">Priority
+                Claims Processing</li>
+              <li class="text-sm font-normal text-zinc-500 dark:text-white line-clamp-1 mt-2.5 relative pl-6">24/7
+                Customer Support</li>
+              <li class="text-sm font-normal text-zinc-500 dark:text-white line-clamp-1 mt-2.5 relative pl-6">
+                Personalized
+                Coverage Recommendations</li>
+            </ul>
+            <a href=""
+              class="[.popular_&]:bg-primary [.popular_&]:text-white secondary-btn border border-primary flex mt-auto">Start
+              Premium</a>
+          </div>
+        </div>
+        <div class="relative w-full border border-gray-200 dark:border-gray-500 bg-white dark:bg-black rounded-2xl lg:rounded-3xl flex flex-col shadow-sm  " data-aos="fade-up" data-aos-duration="2500">
+          <div class="py-5 px-6 md:py-3 md:px-4 lg:py-5 lg:px-6 xl:py-5 xl:px-8 bg-gray-2 w-full grow-0 shrink-0 basis-auto bg-gray-100 dark:bg-darkColor relative   rounded-t-2xl lg:rounded-t-3xl">
+            <h5
+              class="text-lg lg:text-xl font-extrabold font-heading capitalize text-black dark:text-white mb-1 line-clamp-1">
+              Business</h5>
+            <span class=" text-xl lg:text-2xl text-black font-extrabold font-heading inline-block mt-1 capitalize dark:text-white">Custom Pricing
+            </span>
+          </div>
+          <div class="p-6 xl:p-8 flex flex-col gap-4 xl:gap-5 basis-auto w-full h-full">
+            <p class="text-sm 2xl:text-base font-normal text-zinc-500 dark:text-white line-clamp-2">Comprehensive
+              insurance
+              solutions for startups, growing companies, and enterprises</p>
+            <ul class="pricing-list mb-3 lg:mb-4 xl:mb-5">
+              <li class="text-sm font-normal text-zinc-500 dark:text-white line-clamp-1 mt-2.5 relative pl-6">Business
+                Liability Protection</li>
+              <li class="text-sm font-normal text-zinc-500 dark:text-white line-clamp-1 mt-2.5 relative pl-6">Employee
+                Coverage</li>
+              <li class="text-sm font-normal text-zinc-500 dark:text-white line-clamp-1 mt-2.5 relative pl-6">Asset
+                Protection</li>
+              <li class="text-sm font-normal text-zinc-500 dark:text-white line-clamp-1 mt-2.5 relative pl-6">Dedicated
+                Account Manager</li>
+              <li class="text-sm font-normal text-zinc-500 dark:text-white line-clamp-1 mt-2.5 relative pl-6">Risk
+                Assessment</li>
+              <li class="text-sm font-normal text-zinc-500 dark:text-white line-clamp-1 mt-2.5 relative pl-6">Priority
+                Business Support</li>
+            </ul>
+            <a href="" class="secondary-btn border border-primary flex mt-auto hover:border-darkBlue"> Contact Sales</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- pricing-section-end  -->
+
+  <!-- footer-start -->
+  <footer class="w-full pt-12 md:pt-13 lg:pt-16 xl:pt-20 pb-5 bg-darkBlue relative">
+    <div class="container max-w-420 px-5 sm:px-6 lg:px-8 xl:px-10 mx-auto flex flex-col lg:flex-row lg:flex-wrap justify-between gap-4">
+      <div class="w-full max-w-2xs lg:max-w-44 xl:max-w-xs ">
+        <a class="block w-auto max-w-32 lg:max-w-42 2xl:max-w-50 mb-3 xl:mb-5" href="index.html">
+          <img src="assets/images/site-whitelogo.svg" alt="Logo" class="w-full h-auto  object-cover">
+        </a>
+        <p class="text-sm text-whitelight font-normal">Bet smarter with real-time odds,
+          sharp market signals, and AI-powered insights - all in one platform.</p>
+      </div>
+      <div class=" w-auto">
+        <h5 class="text-lg capitalize  text-white font-bold font-heading  mb-3">Company</h5>
+        <nav class="flex flex-col gap-2 text-sm text-whitelight font-normal">
+          <a href="" class="hover:text-white">About Us</a>
+          <a href="" class="hover:text-white">Our Mission</a>
+          <a href="" class="hover:text-white">Careers</a>
+          <a href="" class="hover:text-white">Newsroom</a>
+          <a href="" class="hover:text-white">Blog</a>
+        </nav>
+      </div>
+      <div class=" w-auto">
+        <h6 class="text-lg capitalize  text-white font-bold font-heading  mb-3">Insurance Solutions</h6>
+        <nav class="flex flex-col gap-2 text-sm text-whitelight font-normal">
+          <a href="" class="hover:text-white">Health Insurance</a>
+          <a href="" class="hover:text-white">Life Insurance</a>
+          <a href="" class="hover:text-white">Auto Insurance</a>
+          <a href="" class="hover:text-white">Home Insurance</a>
+          <a href="" class="hover:text-white">Travel Insurance</a>
+          <a href="" class="hover:text-white">Business Insurance</a>
+        </nav>
+      </div>
+      <div class=" w-auto">
+        <h6 class="text-lg capitalize  text-white font-bold font-heading  mb-3">Resources</h6>
+        <nav class="flex flex-col gap-2 text-sm text-whitelight font-normal">
+          <a href="" class="hover:text-white">Help Center</a>
+          <a href="" class="hover:text-white">Insurance Guides</a>
+          <a href="" class="hover:text-white">Claims Support</a>
+          <a href="" class="hover:text-white">Frequently Asked Questions</a>
+          <a href="" class="hover:text-white">Privacy Policy</a>
+          <a href="" class="hover:text-white">Terms of Service</a>
+        </nav>
+      </div>
+      <div class=" w-auto">
+        <h6 class="text-lg capitalize  text-white font-bold font-heading  mb-3">Contact Us</h6>
+        <a href="support@insurepilot.com
+"
+          class="text-sm text-normal  text-whitelight hover:text-white hover:underline inline-flex items-center gap-2.5 mb-4">
+          <i class="fa-solid fa-envelope"></i>
+          support@insurepilot.com
+
+        </a>
+        <h2 class="text-base  text-white font-medium leading-5.5 mb-4">Follow Us</h2>
+        <ul class="inline-flex items-center gap-3 sm:gap-4">
+          <li>
+            <a class="w-10 h-10 inline-flex items-center justify-center rounded-full text-xl text-whitelight p-1.5 border border-whitelight bg-transparent hover:text-primary hover:border-white hover:bg-white"
+              href=""><span><i class="fa-brands fa-facebook-f"></i> </span></a>
+          </li>
+          <li>
+            <a class="w-10 h-10 inline-flex items-center justify-center rounded-full text-xl text-whitelight p-1.5 border border-whitelight bg-transparent hover:text-primary hover:border-white hover:bg-white"
+              href=""><span><i class="fa-brands fa-x-twitter"></i> </span></a>
+          </li>
+          <li>
+            <a class="w-10 h-10 inline-flex items-center justify-center rounded-full text-xl text-whitelight p-1.5 border border-whitelight bg-transparent hover:text-primary hover:border-white hover:bg-white"
+              href=""><span><i class="fa-brands fa-instagram"></i> </span></a>
+          </li>
+          <li>
+            <a class="w-10 h-10 inline-flex items-center justify-center rounded-full text-xl text-whitelight p-1.5 border border-whitelight bg-transparent hover:text-primary hover:border-white hover:bg-white"
+              href=""><span><i class="fa-brands fa-linkedin-in"></i> </span></a>
+          </li>
+          <li>
+            <a class="w-10 h-10 inline-flex items-center justify-center rounded-full text-xl text-whitelight p-1.5 border border-whitelight bg-transparent hover:text-primary hover:border-white hover:bg-white"
+              href=""><span><i class="fa-brands fa-youtube"></i> </span></a>
+          </li>
+        </ul>
+      </div>
+      <div class="w-full grow-0 shrink-0 basis-auto mt-2 sm:mt-4 lg:mt-6 border-t border-gray-600 pt-5 flex sm:items-center justify-between gap-2 sm:gap-4 flex-col sm:flex-row">
+         <p class="text-sm text-whitelight font-normal grow-0 shrink-0 basis-auto">&copy; 2026 InsurePilot. All Rights Reserved.</p>
+         <ul class="basis-auto flex items-center gap-x-4 gap-y-2 flex-wrap sm:gap-4">
+           <li class="grow-0 shrink-0 basis-auto">
+            <a href="" class="text-sm font-normal text-whitelight hover:text-white hover:underline transition-colors">Privacy policy</a>
+           </li>
+           <li class="grow-0 shrink-0 basis-auto">
+            <a href="" class="text-sm font-normal text-whitelight hover:text-white hover:underline transition-colors">Terms of service</a>
+           </li>
+           <li class="grow-0 shrink-0 basis-auto">
+            <a href="" class="text-sm font-normal text-whitelight hover:text-white hover:underline transition-colors">Cookies</a>
+           </li>
+         </ul>
+      </div>
+    </div>
+  </footer>
+  <!-- footer-end -->
 </body>
 <!-- jQuery-CDN -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/4.0.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
 <!-- owl-carousel-JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 <!-- AOS Js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 <!-- Custom Js -->
 <script src="assets/js/custom.js"></script>
+
 </html>
