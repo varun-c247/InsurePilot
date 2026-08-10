@@ -34,7 +34,7 @@ body {
     @apply scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100;
 }
 h1,h2,h3,h4,h5,h6{font-family: var(--font-heading);}
-.pricing-list li:before{
+.pricing-list li:before, .hero-list li:before{
           content: '\f00c';
           position: absolute;
           width: 16px;
@@ -52,3 +52,13 @@ h1,h2,h3,h4,h5,h6{font-family: var(--font-heading);}
           color: var(--color-primary);
           line-height: 1;
 } 
+
+.hero-slider .owl-dots {
+    @apply absolute w-full h-auto flex items-center justify-center z-1 bottom-3 gap-2
+}
+.hero-slider .owl-dots .owl-dot span{
+    @apply w-6 h-1 bg-white block
+}
+.hero-slider .owl-dots .owl-dot.active span{
+    @apply bg-primary
+}

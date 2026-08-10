@@ -53,7 +53,7 @@ $('.hero-slider').owlCarousel({
         mouseDrag: false,
         autoplayTimeout: 3500,
         autoplaySpeed: 3500,
-        autoplayHoverPause:true,
+        autoplayHoverPause:false,
         animateOut: "fadeOut",
         animateIn: "fadeIn",
         autoHeight:true
