@@ -62,3 +62,20 @@ h1,h2,h3,h4,h5,h6{font-family: var(--font-heading);}
 .hero-slider .owl-dots .owl-dot.active span{
     @apply bg-primary
 }
+.aside_list a:before{
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    background-color: #ffffff;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: none;
+    transition: .5s all;
+    @apply rounded-md
+}
+.aside_list a.active:before{
+    display: block;
+    transition: .5s all;
+}

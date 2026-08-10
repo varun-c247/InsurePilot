@@ -20,11 +20,38 @@
   <!-- AOS CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
   <!-- Output CSS -->
-  <link href="assets/css/output.css" rel="stylesheet">
+  <link href="../assets/css/output.css" rel="stylesheet">
   <!-- favicon-link -->
-  <link rel="icon" type="image/x-icon" href="assets/icons/favicon.svg">
+  <link rel="icon" type="image/x-icon" href="../assets/icons/favicon.svg">
 </head>
 <body class="antialiased overflow-x-hidden">
+  <main class="w-full relative">
+    <!-- sidebar-start -->
+    <aside class="w-full h-dvh fixed left-0 top-0 bg-darkBlue max-w-60">
+      <div class="relative w-full h-full flex flex-col">
+        <div class="w-full h-20 flex items-center justify-center border-b border-gray-700 grow-0 shrink-0 basis-auto">
+          <a href="../index.html" class="block w-auto max-w-32 lg:max-w-42 2xl:max-w-50">
+             <img src="../assets/images/site-whitelogo.svg" alt="Logo" class="w-full h-auto  object-cover">
+          </a>
+        </div>
+        <div class="w-auto h-auto basis-auto relative p-4 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100">
+          <nav class="aside_list text-sm lg:text-base text-white font-medium capitalize flex flex-col gap-2">
+            <a href="" class="active grow-0 shrink-0 basis-auto flex items-center py-2.5 px-4 rounded-r-md gap-2 [&.active]:bg-primary hover:bg-whitelight relative">
+              <span class=""><i class="fa-solid fa-house"></i></span>
+              <span class="">dashboard</span>
+            </a>
+            <a href="" class="grow-0 shrink-0 basis-auto flex items-center py-2.5 px-4 rounded-r-md gap-2 [&.active]:bg-primary hover:bg-whitelight relative">
+              <span class=""><i class="fa-solid fa-circle-user"></i></span>
+              <span class="">profile</span>
+            </a>
+          </nav>
+        </div>
+      </div>
+    </aside>
+    <!-- sidebar-end -->
+    <!-- header-start -->
+    <!-- header-end -->
+  </main>
 </body>
 <!-- jQuery-CDN -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/4.0.0/jquery.min.js"></script>
@@ -33,5 +60,5 @@
 <!-- AOS Js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 <!-- Custom Js -->
-<script src="assets/js/custom.js"></script>
+<script src="../assets/js/custom.js"></script>
 </html>
