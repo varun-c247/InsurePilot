@@ -537,6 +537,9 @@
   .resize {
     resize: both;
   }
+  .resize {
+    resize: both;
+  }
   .flex-col {
     flex-direction: column;
   }
@@ -855,6 +858,9 @@
   }
   .capitalize {
     text-transform: capitalize;
+  }
+  .underline {
+    text-decoration-line: underline;
   }
   .underline {
     text-decoration-line: underline;
