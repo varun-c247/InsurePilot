@@ -60,4 +60,57 @@ $('.hero-slider').owlCarousel({
     })
 // ---------Owl-Carousel-js-end------------
 
+// -----------dropdown-menu-js-start-----------
+$(document).ready(function () {
 
+  $(".dropdown-btn").on("click", function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    const $dropdown = $(this).closest(".dropdown");
+    const $menu = $dropdown.find(".dropdown-menu");
+
+    // Close all other dropdowns
+    $(".dropdown").not($dropdown).find(".dropdown-menu").addClass("hidden");
+
+    // Open/close clicked dropdown
+    $menu.toggleClass("hidden");
+  });
+
+  // Close all dropdowns when clicking outside
+ $(document).on("click", function () {
+    $(".dropdown-menu").addClass("hidden");
+  });
+
+});
+// -----------dropdown-menu-js-end-----------
+
+// -----------dashboard-tab-js-start-----------
+$(".tab-btn").on("click", function () {
+    const targetTab = $(this).data("tab");
+
+    // Remove active class from all buttons
+    $(".tab-btn").removeClass("active");
+
+    // Remove active class from all contents
+    $(".tab-content").removeClass("active");
+
+    // Add active class to clicked button
+    $(this).addClass("active");
+
+    // Show selected content
+    $("#" + targetTab).addClass("active");
+});
+// -----------dashboard-tab-js-end-----------
+
+// ------teable-empty-box-hideShow-js-start------
+$(document).on("click", "#empty_state", function () {
+    if ($(this).prop("checked")) {
+        $(".table-box").addClass("hidden");
+        $(".empty-box").removeClass("hidden").addClass("flex");
+    } else {
+        $(".table-box").removeClass("hidden");
+        $(".empty-box").removeClass("flex").addClass("hidden");
+    }
+});
+// ------teable-empty-box-hideShow-js-end------
