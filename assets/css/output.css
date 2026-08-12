@@ -334,6 +334,9 @@
   .z-1 {
     z-index: 1;
   }
+  .z-2 {
+    z-index: 2;
+  }
   .z-8 {
     z-index: 8;
   }
@@ -505,14 +508,38 @@
   .h-20 {
     height: calc(var(--spacing) * 20);
   }
+  .h-25 {
+    height: calc(var(--spacing) * 25);
+  }
   .h-40 {
     height: calc(var(--spacing) * 40);
+  }
+  .h-\[47\.5dvh\] {
+    height: 47.5dvh;
   }
   .h-\[47dvh\] {
     height: 47dvh;
   }
+  .h-\[49dvh\] {
+    height: 49dvh;
+  }
   .h-\[calc\(100dvh-65px\)\] {
     height: calc(100dvh - 65px);
+  }
+  .h-\[calc\(100dvh-370px\)\] {
+    height: calc(100dvh - 370px);
+  }
+  .h-\[calc\(100dvh-452px\)\] {
+    height: calc(100dvh - 452px);
+  }
+  .h-\[calc\(100dvh-490px\)\] {
+    height: calc(100dvh - 490px);
+  }
+  .h-\[calc\(100vh-200px\)\] {
+    height: calc(100vh - 200px);
+  }
+  .h-\[calc\(100vh-216px\)\] {
+    height: calc(100vh - 216px);
   }
   .h-\[calc\(100vh-232px\)\] {
     height: calc(100vh - 232px);
@@ -541,6 +568,9 @@
   .max-h-\[55dvh\] {
     max-height: 55dvh;
   }
+  .max-h-\[calc\(100vh-216px\)\] {
+    max-height: calc(100vh - 216px);
+  }
   .min-h-90 {
     min-height: calc(var(--spacing) * 90);
   }
@@ -552,6 +582,9 @@
   }
   .min-h-\[55dvh\] {
     min-height: 55dvh;
+  }
+  .min-h-\[calc\(100vh-216px\)\] {
+    min-height: calc(100vh - 216px);
   }
   .min-h-dvh {
     min-height: 100dvh;
@@ -591,6 +624,9 @@
   }
   .w-18 {
     width: calc(var(--spacing) * 18);
+  }
+  .w-20 {
+    width: calc(var(--spacing) * 20);
   }
   .w-40 {
     width: calc(var(--spacing) * 40);
@@ -699,6 +735,9 @@
   }
   .cursor-pointer {
     cursor: pointer;
+  }
+  .resize-none {
+    resize: none;
   }
   .scrollbar-thin {
     scrollbar-width: thin;
@@ -896,6 +935,9 @@
   }
   .bg-gray-200 {
     background-color: var(--color-gray-200);
+  }
+  .bg-gray-300 {
+    background-color: var(--color-gray-300);
   }
   .bg-green-50 {
     background-color: var(--color-green-50);
@@ -1218,6 +1260,9 @@
   .accent-\[\#027EF5\] {
     accent-color: #027EF5;
   }
+  .opacity-0 {
+    opacity: 0%;
+  }
   .shadow-md {
     --tw-shadow: 0 4px 6px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 2px 4px -2px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
@@ -1272,6 +1317,9 @@
   @media (hover: hover) {
     .group-hover\:bg-gray-50:is(:where(.group):hover *) {
       background-color: var(--color-gray-50);
+    }
+    .group-hover\:text-white:is(:where(.group):hover *) {
+      color: var(--color-white);
     }
   }
   .before\:absolute::before {
@@ -1379,6 +1427,9 @@
     .hover\:border-white:hover {
       border-color: var(--color-white);
     }
+    .hover\:bg-darkBlue:hover {
+      background-color: var(--color-darkBlue);
+    }
     .hover\:bg-gray-300:hover {
       background-color: var(--color-gray-300);
     }
@@ -1482,6 +1533,9 @@
     .sm\:px-6 {
       padding-inline: calc(var(--spacing) * 6);
     }
+    .sm\:py-4 {
+      padding-block: calc(var(--spacing) * 4);
+    }
     .sm\:py-15 {
       padding-block: calc(var(--spacing) * 15);
     }
@@ -1501,6 +1555,9 @@
   @media (width >= 48rem) {
     .md\:ms-auto {
       margin-inline-start: auto;
+    }
+    .md\:mb-4 {
+      margin-bottom: calc(var(--spacing) * 4);
     }
     .md\:mb-5 {
       margin-bottom: calc(var(--spacing) * 5);
@@ -1537,6 +1594,9 @@
     }
     .md\:gap-3 {
       gap: calc(var(--spacing) * 3);
+    }
+    .md\:gap-4 {
+      gap: calc(var(--spacing) * 4);
     }
     .md\:px-4 {
       padding-inline: calc(var(--spacing) * 4);
@@ -1717,6 +1777,9 @@
     }
     .lg\:py-5 {
       padding-block: calc(var(--spacing) * 5);
+    }
+    .lg\:py-6 {
+      padding-block: calc(var(--spacing) * 6);
     }
     .lg\:py-8 {
       padding-block: calc(var(--spacing) * 8);
@@ -1972,6 +2035,9 @@
   }
   .dark\:border-gray-500:where(.dark, .dark *) {
     border-color: var(--color-gray-500);
+  }
+  .dark\:border-gray-600:where(.dark, .dark *) {
+    border-color: var(--color-gray-600);
   }
   .dark\:border-gray-700:where(.dark, .dark *) {
     border-color: var(--color-gray-700);
