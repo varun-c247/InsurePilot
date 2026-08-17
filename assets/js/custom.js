@@ -1,16 +1,21 @@
 // ----------aside-Toggle-Menu----------
 $(".hamburger-btn").click(function () {
-    $(".hamburger-btn").toggleClass('active');
-    $(".main-wrapper").toggleClass('expand');
-    $("html").toggleClass('freeze');
-    $(".body-overlay").toggleClass('active');
+    $('.hamburger-btn').toggleClass('active'); 
+    $(".main-wrapper").toggleClass('expand');    
 });
-$(".tab-buttons .tab-btn, .body-overlay").click(function () {
-    $(".hamburger-btn").removeClass('active');
-    $(".main-wrapper").removeClass('expand');
-    $("html").removeClass('freeze');
-    $(".body-overlay").removeClass('active');
-});
+if (window.matchMedia("(max-width: 1024px)").matches) {
+    $(".hamburger-btn").click(function () {
+        $("html").toggleClass("freeze");
+        $(".body-overlay").toggleClass("active");
+    });
+
+    $(".tab-buttons .tab-btn, .body-overlay").click(function () {
+        $(".hamburger-btn").removeClass("active");
+        $(".main-wrapper").removeClass("expand");
+        $("html").removeClass("freeze");
+        $(".body-overlay").removeClass("active");
+    });
+}
 // ----------aside-Toggle-Menu----------
 
 // ----------header-Toggle-Menu----------
