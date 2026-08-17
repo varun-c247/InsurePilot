@@ -16,88 +16,180 @@
     --shadow-primary{ box-shadow: rgba(2, 126, 245, .01) 0px 7px 29px 0px; }
     }
 @layer components {
-    .primary-btn{
-        @apply transition inline-flex items-center justify-center w-auto min-w-25 h-10 xl:h-11.25 bg-primary text-white text-sm xl:text-base font-medium rounded-lg py-2 px-7 capitalize relative hover:bg-darkBlue focus:bg-darkBlue active:bg-darkBlue hover:dark:bg-white hover:dark:text-primary focus:dark:bg-white focus:dark:text-primary active:dark:bg-white active:dark:text-primary gap-2; 
-    }
-    .secondary-btn{
-        @apply transition inline-flex items-center justify-center w-auto min-w-25 h-10 xl:h-11.25 bg-white text-primary text-sm xl:text-base font-medium rounded-lg py-2 px-7 capitalize relative hover:bg-darkBlue hover:text-white focus:bg-darkBlue focus:text-white active:bg-darkBlue active:text-white     hover:dark:bg-primary  focus:dark:bg-darkBlue  active:dark:bg-darkBlue gap-2;
-    }
+    /* ----------button-css-start------- */
+    .primary-btn{ @apply cursor-pointer transition inline-flex items-center justify-center w-auto min-w-25 h-10 xl:h-11.25 bg-primary text-white text-sm xl:text-base font-medium rounded-lg py-2 px-7 capitalize relative hover:bg-darkBlue focus:bg-darkBlue active:bg-darkBlue hover:dark:bg-white hover:dark:text-primary focus:dark:bg-white focus:dark:text-primary active:dark:bg-white active:dark:text-primary gap-2; }
+    .secondary-btn{ @apply cursor-pointer transition inline-flex items-center justify-center w-auto min-w-25 h-10 xl:h-11.25 bg-white text-primary text-sm xl:text-base font-medium rounded-lg py-2 px-7 capitalize relative hover:bg-darkBlue hover:text-white focus:bg-darkBlue focus:text-white active:bg-darkBlue active:text-white     hover:dark:bg-primary  focus:dark:bg-darkBlue  active:dark:bg-darkBlue gap-2; }
+    .danger-btn{@apply cursor-pointer transition inline-flex items-center justify-center w-auto min-w-25 h-10 xl:h-11.25 bg-red-600 text-white text-sm xl:text-base font-medium rounded-lg py-2 px-7 capitalize relative hover:bg-red-400 focus:bg-red-400 active:bg-red-400 gap-2;}
+    /* ----------button-css-end------- */
+
 }
-@layer utilities{
-    
-}
-html{
-    @apply scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100;
-}
-body {
-    font-family: var(--font-body);
-    @apply scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100;
-}
+
+html{ @apply scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100; }
+body { font-family: var(--font-body); @apply scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100; }
 h1,h2,h3,h4,h5,h6{font-family: var(--font-heading);}
-.pricing-list li:before, .hero-list li:before{
-          content: '\f00c';
-          position: absolute;
-          width: 16px;
-          height: 16px;
-          background-color: var(--color-primary);
-          color: #ffffff !important;
-          border-radius: 100%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-size: 9px;
-          left: 0;
-          top: 2px;
-          font-family: Fontawesome;
-          color: var(--color-primary);
-          line-height: 1;
-} 
+.dropdown-menu:before{ @apply content-[''] absolute w-4 h-4 right-1 -top-4 bg-transparent border-8 border-transparent border-b-gray-300 ; }
+.pricing-list li:before, .hero-list li:before{ @apply relative before:content-['\f00c'] before:absolute before:w-4 before:h-4 before:bg-primary before:text-white before:rounded-full before:flex before:items-center before:justify-center before:text-[9px] before:left-0 before:top-0.5 before:font-[FontAwesome] before:leading-none; } 
 
-.hero-slider .owl-dots {
-    @apply absolute w-full h-auto flex items-center justify-center z-1 bottom-3 gap-2
-}
-.hero-slider .owl-dots .owl-dot span{
-    @apply w-6 h-1 bg-white block
-}
-.hero-slider .owl-dots .owl-dot.active span{
-    @apply bg-primary
-}
-.tab-buttons .tab-btn:before{
-    content: '';
-    position: absolute;
-    width: 2px;
-    height: 100%;
-    background-color: #ffffff;
-    left: -1rem;
-    top: 50%;
-    transform: translateY(-50%);
-    display: none;
-    transition: .5s all;
-    @apply rounded-md
-}
-.tab-buttons .tab-btn.active:before{
-    display: block;
-    transition: .5s all;
-}
-.dropdown-menu:before{
-    @apply content-[''] absolute w-4 h-4 right-1 -top-4 bg-transparent border-8 border-transparent border-b-gray-300 ;    
-}
+/* --------slider-dots-css-start------- */
+.hero-slider .owl-dots { @apply absolute w-full h-auto flex items-center justify-center z-1 bottom-3 gap-2 }
+.hero-slider .owl-dots .owl-dot span{ @apply w-6 h-1 bg-white block }
+.hero-slider .owl-dots .owl-dot.active span{ @apply bg-primary }
+/* --------slider-dots-css-end------- */
 
-.tab-content {
-  @apply hidden;
-  animation: fadeIn 0.3s ease;
-}
-.tab-content.active {
-  @apply block
-}
-@keyframes fadeIn {
-  from {
+/* ------custom-tab-css-start--------- */
+.tab-buttons .tab-btn:before{ @apply relative before:content-[''] before:absolute before:w-0.5 before:h-full before:bg-white before:-left-4 before:top-1/2 before:-translate-y-1/2 before:hidden before:transition-all before:duration-500; }
+.tab-buttons .tab-btn.active:before{ @apply block transition-all duration-500; }
+.tab-content { @apply hidden; animation: fadeIn 0.3s ease; }
+.tab-content.active { @apply block }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+/* ------custom-tab-css-end--------- */
+
+    /* ----------modal-css-start--------- */
+ /* =========================
+   Modal
+========================= */
+
+.custom-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    visibility: hidden;
     opacity: 0;
-    transform: translateY(5px);
-  }
 
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    transition:
+        opacity 0.25s ease,
+        visibility 0.25s ease;
 }
+
+/* Active Modal */
+.custom-modal.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Overlay */
+.modal-overlay {
+    position: absolute;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.5);
+
+    backdrop-filter: blur(3px);
+}
+
+/* Modal Box */
+.modal-wrapper {
+    position: relative;
+    z-index: 1;
+
+    width: 100%;
+    max-width: 400px;
+
+    margin: 20px;
+    border-radius: 16px;
+
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+
+    transform: translateY(-20px) scale(0.98);
+    transition: transform 0.25s ease;
+}
+
+.custom-modal.show .modal-wrapper {
+    transform: translateY(0) scale(1);
+}
+
+/* Header */
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 18px 20px;
+
+    border-bottom: 1px solid #e5e7eb;
+}
+
+
+
+/* Body */
+.modal-body {
+    padding:30px;
+}
+
+
+
+/* Footer */
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+
+    padding: 16px 20px;
+
+    border-top: 1px solid #e5e7eb;
+}
+
+/* Body Scroll Lock */
+body.modal-open {
+    overflow: hidden;
+}
+
+
+/* =========================
+   Responsive
+========================= */
+
+@media (max-width: 576px) {
+    .modal-wrapper {
+        max-width: calc(100% - 30px);
+        margin: 15px;
+    }
+
+    .modal-header {
+        padding: 15px;
+    }
+
+    .modal-body {
+        padding: 15px;
+    }
+
+    .modal-footer {
+        padding: 15px;
+    }
+}
+    /* ----------modal-css-end--------- */
+    /* ---------Input-toggle-btn-css-start----- */
+   /* Toggle circle */
+.slider::before {
+    content: "";
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    left: 3px;
+    top: 3px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: 0.3s ease;
+}
+
+/* Checked state */
+.toggle input:checked + .slider {
+    background: #027ef5;
+}
+
+.toggle input:checked + .slider::before {
+    transform: translateX(24px);
+}
+    /* ---------Input-toggle-btn-css-end----- */
+
+
+
+
+
+

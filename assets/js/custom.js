@@ -1,3 +1,10 @@
+// ----------aside-Toggle-Menu----------
+$(".hamburger-btn").click(function(){
+  $(".hamburger-btn").toggleClass('active');
+  $(".main-wrapper").toggleClass('expand');
+});
+// ----------aside-Toggle-Menu----------
+
 // ----------header-Toggle-Menu----------
 $(".hamburgerMenu").click(function(){
   $(this).toggleClass('active');
@@ -27,7 +34,6 @@ AOS.init({
         localStorage.setItem("theme", isDark ? "dark" : "light");
         $(".themeToggle").toggleClass("dark", isDark);
     });
-    // Load Saved Theme
     const savedTheme = localStorage.getItem("theme");
     if (
         savedTheme === "dark" ||
@@ -39,7 +45,6 @@ AOS.init({
         $("html").removeClass("dark");
         $(".themeToggle").removeClass("dark");
     }
-// theme-saved-js-end
 // ----------dark-themeToggle-js-end-------------
 
 // ---------Owl-Carousel-js-satrt------------
@@ -62,43 +67,26 @@ $('.hero-slider').owlCarousel({
 
 // -----------dropdown-menu-js-start-----------
 $(document).ready(function () {
-
   $(".dropdown-btn").on("click", function (e) {
     e.preventDefault();
     e.stopPropagation();
-
     const $dropdown = $(this).closest(".dropdown");
     const $menu = $dropdown.find(".dropdown-menu");
-
-    // Close all other dropdowns
     $(".dropdown").not($dropdown).find(".dropdown-menu").addClass("hidden");
-
-    // Open/close clicked dropdown
     $menu.toggleClass("hidden");
   });
-
-  // Close all dropdowns when clicking outside
  $(document).on("click", function () {
     $(".dropdown-menu").addClass("hidden");
   });
-
 });
 // -----------dropdown-menu-js-end-----------
 
 // -----------dashboard-tab-js-start-----------
 $(".tab-btn").on("click", function () {
     const targetTab = $(this).data("tab");
-
-    // Remove active class from all buttons
     $(".tab-btn").removeClass("active");
-
-    // Remove active class from all contents
     $(".tab-content").removeClass("active");
-
-    // Add active class to clicked button
     $(this).addClass("active");
-
-    // Show selected content
     $("#" + targetTab).addClass("active");
 });
 // -----------dashboard-tab-js-end-----------
@@ -114,3 +102,27 @@ $(document).on("click", "#empty_state", function () {
     }
 });
 // ------teable-empty-box-hideShow-js-end------
+
+// -----------modal-js-start----------
+$(document).ready(function () {
+    $(document).on("click", ".open-modal-btn", function () {
+        const modalId = $(this).data("modal");
+        $("#" + modalId).addClass("show");
+        $("body").addClass("modal-open");
+    });
+    $(document).on("click", ".modal-close", function () {
+        $(this).closest(".custom-modal").removeClass("show");
+        $("body").removeClass("modal-open");
+    });
+    $(document).on("click", ".modal-overlay", function () {
+        $(this).closest(".custom-modal").removeClass("show");
+        $("body").removeClass("modal-open");
+    });
+    $(document).on("keydown", function (e) {
+        if (e.key === "Escape") {
+            $(".custom-modal.show").removeClass("show");
+            $("body").removeClass("modal-open");
+        }
+    });
+});
+// -----------modal-css-end----------
