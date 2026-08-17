@@ -1,19 +1,27 @@
 // ----------aside-Toggle-Menu----------
-$(".hamburger-btn").click(function(){
-  $(".hamburger-btn").toggleClass('active');
-  $(".main-wrapper").toggleClass('expand');
+$(".hamburger-btn").click(function () {
+    $(".hamburger-btn").toggleClass('active');
+    $(".main-wrapper").toggleClass('expand');
+    $("html").toggleClass('freeze');
+    $(".body-overlay").toggleClass('active');
+});
+$(".tab-buttons .tab-btn, .body-overlay").click(function () {
+    $(".hamburger-btn").removeClass('active');
+    $(".main-wrapper").removeClass('expand');
+    $("html").removeClass('freeze');
+    $(".body-overlay").removeClass('active');
 });
 // ----------aside-Toggle-Menu----------
 
 // ----------header-Toggle-Menu----------
-$(".hamburgerMenu").click(function(){
-  $(this).toggleClass('active');
-  $(".headerNav").toggleClass('show');
-  $(".body-overlay").toggleClass('active');
-  $("html").toggleClass('freeze');
+$(".hamburgerMenu").click(function () {
+    $(this).toggleClass('active');
+    $(".headerNav").toggleClass('show');
+    $(".body-overlay").toggleClass('active');
+    $("html").toggleClass('freeze');
 });
-$(".body-overlay").click(function(){
-  $(".hamburgerMenu").trigger("click");
+$(".body-overlay").click(function () {
+    $(".hamburgerMenu").trigger("click");
 });
 // ----------header-Toggle-Menu----------
 
@@ -28,56 +36,56 @@ AOS.init({
 // ----------AOS scroll animations----------
 
 // ----------dark-themeToggle-js-start-----------
-    $(".themeToggle").on("click", function () {
-        $("html").toggleClass("dark");
-        const isDark = $("html").hasClass("dark");
-        localStorage.setItem("theme", isDark ? "dark" : "light");
-        $(".themeToggle").toggleClass("dark", isDark);
-    });
-    const savedTheme = localStorage.getItem("theme");
-    if (
-        savedTheme === "dark" ||
-        (!savedTheme && window.matchMedia("(prefers-color-scheme: dark)").matches)
-    ) {
-        $("html").addClass("dark");
-        $(".themeToggle").addClass("dark");
-    } else {
-        $("html").removeClass("dark");
-        $(".themeToggle").removeClass("dark");
-    }
+$(".themeToggle").on("click", function () {
+    $("html").toggleClass("dark");
+    const isDark = $("html").hasClass("dark");
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+    $(".themeToggle").toggleClass("dark", isDark);
+});
+const savedTheme = localStorage.getItem("theme");
+if (
+    savedTheme === "dark" ||
+    (!savedTheme && window.matchMedia("(prefers-color-scheme: dark)").matches)
+) {
+    $("html").addClass("dark");
+    $(".themeToggle").addClass("dark");
+} else {
+    $("html").removeClass("dark");
+    $(".themeToggle").removeClass("dark");
+}
 // ----------dark-themeToggle-js-end-------------
 
 // ---------Owl-Carousel-js-satrt------------
 $('.hero-slider').owlCarousel({
-        items:1,
-        loop:true,
-        margin:0,
-        nav:false,
-        dots:true,
-        autoplay: true,
-        mouseDrag: false,
-        autoplayTimeout: 3500,
-        autoplaySpeed: 3500,
-        autoplayHoverPause:false,
-        animateOut: "fadeOut",
-        animateIn: "fadeIn",
-        autoHeight:true
-    })
+    items: 1,
+    loop: true,
+    margin: 0,
+    nav: false,
+    dots: true,
+    autoplay: true,
+    mouseDrag: false,
+    autoplayTimeout: 3500,
+    autoplaySpeed: 3500,
+    autoplayHoverPause: false,
+    animateOut: "fadeOut",
+    animateIn: "fadeIn",
+    autoHeight: true
+})
 // ---------Owl-Carousel-js-end------------
 
 // -----------dropdown-menu-js-start-----------
 $(document).ready(function () {
-  $(".dropdown-btn").on("click", function (e) {
-    e.preventDefault();
-    e.stopPropagation();
-    const $dropdown = $(this).closest(".dropdown");
-    const $menu = $dropdown.find(".dropdown-menu");
-    $(".dropdown").not($dropdown).find(".dropdown-menu").addClass("hidden");
-    $menu.toggleClass("hidden");
-  });
- $(document).on("click", function () {
-    $(".dropdown-menu").addClass("hidden");
-  });
+    $(".dropdown-btn").on("click", function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        const $dropdown = $(this).closest(".dropdown");
+        const $menu = $dropdown.find(".dropdown-menu");
+        $(".dropdown").not($dropdown).find(".dropdown-menu").addClass("hidden");
+        $menu.toggleClass("hidden");
+    });
+    $(document).on("click", function () {
+        $(".dropdown-menu").addClass("hidden");
+    });
 });
 // -----------dropdown-menu-js-end-----------
 
